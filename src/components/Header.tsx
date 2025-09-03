@@ -35,8 +35,8 @@ const Header = () => {
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-3" aria-label="Go to Home">
             <img
-              src="/logo/logo 1.jpeg"
-              alt="Floating Solar Africa logo"
+              src="/logo/logo 3.jpeg"
+              alt="Viproc General Enterprises logo"
               className="h-12 w-auto object-contain drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)]"
             />
             <span className="sr-only">Floating Solar</span>

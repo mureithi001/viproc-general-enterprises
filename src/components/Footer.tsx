@@ -6,9 +6,13 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-1">
-            <div className="flex items-center mb-6">
-              <h2 className="text-2xl font-bold text-white">Viproc General Enterprises</h2>
-            </div>
+            <a href="/" aria-label="Go to Home">
+              <img 
+                src="/logo/logo 3.jpeg"
+                alt="Viproc General Enterprises logo"
+                className="h-16 w-auto object-contain mb-6"
+              />
+            </a>
 
             <p className="text-sm leading-relaxed">
               World-class processing and packaging solutions that empower businesses.
