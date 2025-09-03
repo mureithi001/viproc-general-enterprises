@@ -1,6 +1,5 @@
-import { useRef, useEffect, useCallback } from 'react';
 import Hero from '../components/Hero';
-import { ArrowRight, Award, Users, Zap, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Award, Users, Zap, PackageCheck, Globe, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { services, type Service } from '../data/services';
 
@@ -11,63 +10,16 @@ const Home = () => {
     { icon: Users, number: '20+', label: 'Years of Experience', description: 'Decades of industry-leading expertise' },
   ];
 
-  // Partners carousel data and refs
-  const partnerItems = [
-    { src: '/partners/KHS-logo.png', alt: 'KHS' },
-    { src: '/partners/Krones-Logo.png', alt: 'Krones' },
-    { src: '/partners/Sidel-Logo.png', alt: 'Sidel' },
-    { src: '/partners/Tetra-Pak-Logo.png', alt: 'Tetra Pak' },
-    { src: '/partners/Sacmi-Logo.png', alt: 'Sacmi' },
-    { src: '/partners/Bosch-Packaging-Logo.png', alt: 'Bosch Packaging' },
-    { src: '/partners/GEA-Logo.png', alt: 'GEA' },
-    { src: '/partners/Alfa-Laval-Logo.png', alt: 'Alfa Laval' },
-    { src: '/partners/SPX-Flow-Logo.png', alt: 'SPX Flow' },
-    { src: '/partners/Ishida-Logo.png', alt: 'Ishida' },
-    { src: '/partners/Markem-Imaje-Logo.png', alt: 'Markem-Imaje' },
-    { src: '/partners/Videojet-Logo.png', alt: 'Videojet' },
-    { src: '/partners/Domino-Printing-Logo.png', alt: 'Domino Printing' },
-    { src: '/partners/Rockwell-Automation-Logo.png', alt: 'Rockwell Automation' },
-    { src: '/partners/Siemens-Logo.png', alt: 'Siemens' },
-    { src: '/partners/Schneider-Electric-Logo.png', alt: 'Schneider Electric' },
+  const clients = [
+    { name: 'Tononoka Steels Ltd', logo: '/site-images/Tononoka Steels Ltd.jpg' },
+    { name: 'Impala Glass Industries Ltd', logo: '/site-images/Impala Glass Industries Ltd.jpg' },
+    { name: 'Botachem Limited', logo: '/site-images/Botachem Limited.jpg' },
+    { name: 'Styroplast Limited', logo: '/site-images/Styroplast Limited.jpg' },
+    { name: 'Printwell Industries Ltd', logo: '/site-images/Printwell Industries Ltd.jpg' },
+    { name: 'Vectus Kenya Ltd', logo: '/site-images/Vectus Kenya Ltd.jpg' },
+    { name: 'Elkeiyo Dairy', logo: '/site-images/Elkeiyo Dairy.jpg' },
+    { name: 'Two Cousins Distillers', logo: '/site-images/Two Cousins Distillers.jpg' },
   ];
-  const partnersScrollerRef = useRef<HTMLDivElement | null>(null);
-  const autoScrollId = useRef<number | null>(null);
-
-  const scrollPartners = (dir: 'left' | 'right') => {
-    const el = partnersScrollerRef.current;
-    if (!el) return;
-    const amount = Math.min(600, el.clientWidth * 0.8);
-    el.scrollBy({ left: dir === 'left' ? -amount : amount, behavior: 'smooth' });
-  };
-
-  const stopAutoScroll = useCallback(() => {
-    if (autoScrollId.current !== null) {
-      window.clearInterval(autoScrollId.current);
-      autoScrollId.current = null;
-    }
-  }, []);
-
-  const startAutoScroll = useCallback(() => {
-    const el = partnersScrollerRef.current;
-    if (!el) return;
-    // Prevent multiple intervals
-    stopAutoScroll();
-    autoScrollId.current = window.setInterval(() => {
-      const node = partnersScrollerRef.current;
-      if (!node) return;
-      const atEnd = node.scrollLeft + node.clientWidth >= node.scrollWidth - 1;
-      if (atEnd) {
-        node.scrollLeft = 0;
-      } else {
-        node.scrollLeft += 1; // smooth continuous motion
-      }
-    }, 20);
-  }, [stopAutoScroll]);
-
-  useEffect(() => {
-    startAutoScroll();
-    return () => stopAutoScroll();
-  }, [startAutoScroll, stopAutoScroll]);
 
   return (
     <div className="relative">
@@ -190,60 +142,78 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Partners Carousel Section */}
+      {/* Our Clients Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl font-serif font-bold text-dark mb-6">Trusted Partners</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              We collaborate with industry leaders to deliver comprehensive renewable energy solutions
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-serif font-bold text-dark mb-4">Our Clients</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              We are proud to have worked with a diverse range of industry leaders.
             </p>
           </div>
-
-          <div className="relative">
-            <button
-              aria-label="Scroll partners left"
-              onClick={() => scrollPartners('left')}
-              className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full bg-light text-dark shadow hover:bg-light/80"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <div
-              ref={partnersScrollerRef}
-              className="flex gap-10 overflow-x-auto scroll-smooth py-4 px-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-              onMouseEnter={stopAutoScroll}
-              onMouseLeave={startAutoScroll}
-              onTouchStart={stopAutoScroll}
-              onTouchEnd={startAutoScroll}
-            >
-              {partnerItems.map((it, idx) => (
-                <div key={idx} className="flex-shrink-0 flex items-center justify-center min-w-[160px]">
-                  <img
-                    src={it.src}
-                    alt={`${it.alt} logo`}
-                    className="h-12 object-contain opacity-80 hover:opacity-100 transition-opacity"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-            <button
-              aria-label="Scroll partners right"
-              onClick={() => scrollPartners('right')}
-              className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full bg-light text-dark shadow hover:bg-light/80"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {clients.map((client, index) => (
+              <div key={index} className="bg-light p-6 rounded-2xl flex items-center justify-center h-32 transition-transform duration-300 group hover:scale-105">
+                {client.logo ? (
+                  <img src={client.logo} alt={client.name} className="max-h-20 max-w-full object-contain" />
+                ) : (
+                  <p className="font-semibold text-dark text-lg text-center">{client.name}</p>
+                )}
+              </div>
+            ))}
           </div>
-
           <div className="text-center mt-12">
             <Link
-              to="/partners"
+              to="/clients"
               className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 font-semibold transition-colors"
             >
-              <span>View All Partners</span>
+              <span>View All Clients</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* What Sets Us Apart */}
+      <section className="py-20 bg-light">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-serif font-bold text-dark mb-4">What Sets Us Apart</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Delivering comprehensive solutions and unwavering support to drive your success.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: PackageCheck,
+                title: 'End-to-End Solutions',
+                description: 'From machinery supply to installation and support, we offer a complete, seamless service for your production needs.'
+              },
+              {
+                icon: Globe,
+                title: 'Global Technology, Local Expertise',
+                description: 'We source world-class equipment from leading manufacturers and back it with our dedicated local technical support.'
+              },
+              {
+                icon: Users,
+                title: 'Client-Centric Partnership',
+                description: 'Your success is our priority. We build long-term relationships by providing tailored solutions and reliable guidance.'
+              },
+              {
+                icon: Wrench,
+                title: 'Unmatched Aftermarket Support',
+                description: 'Minimize downtime with rapid delivery of genuine spare parts and access to our expert technicians when you need them.'
+              }
+            ].map((item, index) => (
+              <div key={index} className="bg-white p-8 rounded-2xl text-center shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-secondary/10 text-secondary rounded-2xl mb-6">
+                  <item.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-semibold text-dark mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
