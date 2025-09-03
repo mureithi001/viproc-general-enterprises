@@ -109,8 +109,8 @@ const Home = () => {
           </div>
           <div className="relative">
             <img
-              src="/hero/about.jpg"
-              alt="A diverse team of engineers collaborating in a modern office"
+              src="/site-images/About Viproc General Enterprises.jpg"
+              alt="A snapshot of Viproc General Enterprises operations"
               className="rounded-2xl shadow-2xl"
               loading="lazy"
             />
@@ -180,8 +180,8 @@ const Home = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/9800029/pexels-photo-9800029.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Floating solar panels on water"
+                src="/site-images/Innovative Solutions for Modern Production.jpg"
+                alt="Showcasing innovative solutions for modern production"
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-dark/20 to-transparent rounded-2xl"></div>

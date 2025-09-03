@@ -1,4 +1,4 @@
-import { Target, Heart, Lightbulb, ArrowRight, Handshake, Eye, Goal, Building, Leaf } from 'lucide-react';
+import { Target, Heart, Lightbulb, ArrowRight, Handshake, Eye, Goal, Building, Leaf, Utensils, Pill, FlaskConical, Sprout, Printer, Factory, GlassWater, Container } from 'lucide-react';
 
 const About = () => {
   const values = [
@@ -58,6 +58,33 @@ const About = () => {
         </div>
       </section>
 
+      {/* About Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="lg:col-span-1">
+              <h2 className="text-4xl font-serif font-bold text-navy mb-6">Our Story</h2>
+              <div className="space-y-6 text-lg text-steel-gray leading-relaxed">
+                <p>
+                  At VIPROC General Enterprises, we believe packaging is more than just the final stage of production — it is the point where quality, safety, and brand identity come together. Since our establishment, we have dedicated ourselves to delivering world-class processing and packaging solutions that empower businesses to compete at the highest level.
+                </p>
+                <p>
+                  With over 7 years of experience, we have built a reputation as a trusted partner for companies across East Africa. Our expertise lies in end-of-line equipment, machine installations, spare parts distribution, and integrated packaging systems. We also provide consulting and training services to ensure our clients not only acquire the right solutions but also have the knowledge and support needed to run them efficiently.
+                </p>
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src="/site-images/Our Story.jpg"
+                alt="Industrial packaging machinery"
+                className="rounded-2xl shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-copper/20 to-transparent rounded-2xl"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Mission & Vision Section */}
       <section className="py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -84,33 +111,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="lg:col-span-1">
-              <h2 className="text-4xl font-serif font-bold text-navy mb-6">Our Story</h2>
-              <div className="space-y-6 text-lg text-steel-gray leading-relaxed">
-                <p>
-                  At VIPROC General Enterprises, we believe packaging is more than just the final stage of production — it is the point where quality, safety, and brand identity come together. Since our establishment, we have dedicated ourselves to delivering world-class processing and packaging solutions that empower businesses to compete at the highest level.
-                </p>
-                <p>
-                  With over 7 years of experience, we have built a reputation as a trusted partner for companies across East Africa. Our expertise lies in end-of-line equipment, machine installations, spare parts distribution, and integrated packaging systems. We also provide consulting and training services to ensure our clients not only acquire the right solutions but also have the knowledge and support needed to run them efficiently.
-                </p>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="/hero/about.jpg"
-                alt="Industrial packaging machinery"
-                className="rounded-2xl shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-copper/20 to-transparent rounded-2xl"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Industries We Serve Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -119,17 +119,18 @@ const About = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center">
             {[
-              'Food & Beverage',
-              'Pharmaceuticals',
-              'Chemicals',
-              'Agrochemicals',
-              'Printing & Packaging',
-              'Steel & Metals',
-              'Glass Manufacturing',
-              'Tanks & Vessels'
+              { name: 'Food & Beverage', icon: Utensils },
+              { name: 'Pharmaceuticals', icon: Pill },
+              { name: 'Chemicals', icon: FlaskConical },
+              { name: 'Agrochemicals', icon: Sprout },
+              { name: 'Printing & Packaging', icon: Printer },
+              { name: 'Steel & Metals', icon: Factory },
+              { name: 'Glass Manufacturing', icon: GlassWater },
+              { name: 'Tanks & Vessels', icon: Container },
             ].map((industry, index) => (
-              <div key={index} className="p-6 bg-cream rounded-2xl group hover:shadow-lg transition-shadow">
-                <h3 className="text-lg font-semibold text-navy group-hover:text-copper transition-colors duration-300">{industry}</h3>
+              <div key={index} className="p-6 bg-cream rounded-2xl group hover:shadow-lg transition-shadow flex flex-col items-center justify-center">
+                <industry.icon className="w-10 h-10 text-copper mb-4" />
+                <h3 className="text-lg font-semibold text-navy group-hover:text-copper transition-colors duration-300">{industry.name}</h3>
               </div>
             ))}
           </div>
@@ -201,7 +202,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <img
-                src="/hero/sustainability.jpg" // Placeholder image
+                src="/site-images/Sustainability & Innovation.jpg"
                 alt="Eco-friendly industrial solutions"
                 className="rounded-2xl shadow-2xl"
               />
@@ -224,16 +225,16 @@ const About = () => {
       {/* Values */}
       <section className="py-20 bg-navy text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-4xl font-serif font-bold mb-16 text-center">Our Values</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <h2 className="text-4xl font-serif font-bold mb-16 text-center text-cream">Our Values</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {values.map((value, index) => (
               <div key={index} className="flex items-start space-x-6 group">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 ring-1 ring-[#3A65A9]/20">
-                  <value.icon className="w-8 h-8 text-[#3A65A9]" />
+                <div className="w-16 h-16 bg-cream/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 ring-1 ring-cream/20">
+                  <value.icon className="w-8 h-8 text-cream" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold mb-4">{value.title}</h3>
-                  <p className="text-cream/90 leading-relaxed">{value.description}</p>
+                  <h3 className="text-2xl font-semibold mb-4 text-white">{value.title}</h3>
+                  <p className="text-cream/80 leading-relaxed">{value.description}</p>
                 </div>
               </div>
             ))}
