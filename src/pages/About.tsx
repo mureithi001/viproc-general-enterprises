@@ -1,4 +1,3 @@
-import React from 'react';
 import { Target, Heart, Lightbulb, ArrowRight, Handshake, Eye, Goal, Building, Leaf } from 'lucide-react';
 
 const About = () => {
