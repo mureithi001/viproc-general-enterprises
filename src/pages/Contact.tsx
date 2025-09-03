@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -47,32 +47,32 @@ const Contact = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-navy to-steel-gray text-white">
+      <section className="py-20 bg-gradient-to-br from-dark to-dark/90 text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl lg:text-6xl font-serif font-bold mb-6">
             Contact Us
           </h1>
-          <p className="text-xl lg:text-2xl text-cream/90 leading-relaxed">
+          <p className="text-xl lg:text-2xl text-light/90 leading-relaxed">
             Have a question or a project in mind? We'd love to hear from you.
           </p>
         </div>
       </section>
 
       {/* Contact Information */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-light">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {contactInfo.map((info, index) => (
               <div
                 key={index}
-                className="text-center p-6 rounded-2xl bg-white ring-1 ring-[#3A65A9]/10 hover:shadow-lg transition-shadow duration-300"
+                className="text-center p-6 rounded-2xl bg-white ring-1 ring-secondary/10 hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl mb-6 ring-1 ring-[#3A65A9]/20">
-                  <info.icon className="w-8 h-8 text-[#3A65A9]" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl mb-6 ring-1 ring-secondary/20">
+                  <info.icon className="w-8 h-8 text-secondary" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#3A65A9] mb-3">{info.title}</h3>
-                <div className="text-[#818286] font-medium mb-2 whitespace-pre-line">{info.details}</div>
-                <p className="text-sm text-[#818286]">{info.description}</p>
+                <h3 className="text-xl font-semibold text-secondary mb-3">{info.title}</h3>
+                <div className="text-gray-600 font-medium mb-2 whitespace-pre-line">{info.details}</div>
+                <p className="text-sm text-gray-600">{info.description}</p>
               </div>
             ))}
           </div>
@@ -80,11 +80,11 @@ const Contact = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 bg-cream">
+      <section className="py-20 bg-light">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-bold text-navy mb-6">Send Us a Message</h2>
-            <p className="text-xl text-steel-gray">
+            <h2 className="text-4xl font-serif font-bold text-dark mb-6">Send Us a Message</h2>
+            <p className="text-xl text-gray-600">
               Fill out the form below and we'll get back to you within 24 hours.
             </p>
           </div>
@@ -92,7 +92,7 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-navy mb-2">
+                <label htmlFor="name" className="block text-sm font-semibold text-dark mb-2">
                   Full Name *
                 </label>
                 <input
@@ -102,12 +102,12 @@ const Contact = () => {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-cream rounded-lg focus:border-copper focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none transition-colors"
                   placeholder="Your full name"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-navy mb-2">
+                <label htmlFor="email" className="block text-sm font-semibold text-dark mb-2">
                   Email Address *
                 </label>
                 <input
@@ -117,7 +117,7 @@ const Contact = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-cream rounded-lg focus:border-copper focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none transition-colors"
                   placeholder="your.email@company.com"
                 />
               </div>
@@ -125,7 +125,7 @@ const Contact = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label htmlFor="subject" className="block text-sm font-semibold text-navy mb-2">
+                <label htmlFor="subject" className="block text-sm font-semibold text-dark mb-2">
                   Subject *
                 </label>
                 <select
@@ -134,7 +134,7 @@ const Contact = () => {
                   required
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-cream rounded-lg focus:border-copper focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none transition-colors"
                 >
                   <option value="">Select a topic</option>
                   <option value="equipment">Equipment Inquiry</option>
@@ -147,7 +147,7 @@ const Contact = () => {
             </div>
 
             <div className="mb-8">
-              <label htmlFor="message" className="block text-sm font-semibold text-navy mb-2">
+              <label htmlFor="message" className="block text-sm font-semibold text-dark mb-2">
                 Message *
               </label>
               <textarea
@@ -157,14 +157,14 @@ const Contact = () => {
                 rows={6}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-cream rounded-lg focus:border-copper focus:outline-none transition-colors resize-none"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none transition-colors resize-none"
                 placeholder="Tell us about your project, timeline, and requirements..."
               ></textarea>
             </div>
 
             <button
               type="submit"
-              className="w-full bg-copper text-white py-4 px-8 rounded-lg font-semibold hover:bg-copper/90 transition-colors flex items-center justify-center space-x-2"
+              className="w-full bg-primary text-white py-4 px-8 rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center space-x-2"
             >
               <Send className="w-5 h-5" />
               <span>Send Message</span>

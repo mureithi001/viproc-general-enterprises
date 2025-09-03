@@ -25,8 +25,8 @@ export const services: Service[] = [
       "Equipment tailored to meet your specific operational needs."
     ],
     images: [
-      "/hero/about.jpg",
-      "/services/electrical/Electrical & Power1.jpg"
+      "/site-images/End-of-Line Equipment 1.jpg",
+      "/site-images/End-of-Line Equipment 2.jpg"
     ],
     category: "Equipment Solutions",
     details: {
@@ -57,8 +57,8 @@ export const services: Service[] = [
       "Includes on-site handover and initial operator training."
     ],
     images: [
-      "/services/controllsandautomation/Controls & Automation 1.jpg",
-      "/services/electrical/Electrical & Power 2.jpg"
+      "/site-images/Installation & Commissioning 1.jpg",
+      "/site-images/Installation & Commissioning 2.jpg"
     ],
     category: "Technical Services",
     details: {
@@ -88,8 +88,8 @@ export const services: Service[] = [
       "Preventive maintenance kits and custom schedules."
     ],
     images: [
-      "/services/electrical/Electrical & Power 3.jpg",
-      "/services/water/water 1.jpg"
+      "/site-images/Spare Parts & Support 1.jpg",
+      "/site-images/Spare Parts & Support 2.jpg"
     ],
     category: "Support Services",
     details: {
@@ -119,8 +119,7 @@ export const services: Service[] = [
       "Feasibility studies and strategic planning for new lines."
     ],
     images: [
-      "/hero/image.png",
-      "/services/water/water 2.jpg"
+      "/site-images/Consulting & Training.jpg"
     ],
     category: "Advisory Services",
     details: {

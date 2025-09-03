@@ -4,10 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: '#1E3A5F',
-        'steel-gray': '#6B7280',
-        copper: '#B45309',
-        cream: '#FEF3C7',
+        primary: '#E87722',
+        secondary: '#2C9A4B',
+        dark: '#1D2B36',
+        light: '#F5F5F2',
+        'steel-gray': '#6B7280', // Kept for text, will review
       },
       fontFamily: {
         serif: ['Playfair Display', 'serif'],

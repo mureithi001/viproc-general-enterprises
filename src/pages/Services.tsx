@@ -25,19 +25,19 @@ const Services = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-navy to-steel-gray text-white">
+      <section className="py-20 bg-gradient-to-br from-dark to-gray-800 text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl lg:text-6xl font-serif font-bold mb-6">
             Our Packaging & Processing Services
           </h1>
-          <p className="text-xl lg:text-2xl text-cream/90 leading-relaxed">
+          <p className="text-xl lg:text-2xl text-light/90 leading-relaxed">
             End-to-end solutions designed to optimize your production line, from equipment supply to aftermarket support.
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-light">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="space-y-24">
             {services.map((service, index) => {
@@ -51,10 +51,10 @@ const Services = () => {
                 >
                   <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                     <div className="flex items-center space-x-4 mb-6">
-                      <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center ring-1 ring-[#3A65A9]/20">
-                        <ServiceIcon className="w-8 h-8 text-[#3A65A9]" />
+                      <div className="w-16 h-16 bg-light rounded-2xl flex items-center justify-center ring-1 ring-secondary/20">
+                        <ServiceIcon className="w-8 h-8 text-secondary" />
                       </div>
-                      <h2 className="text-3xl font-serif font-bold text-[#3A65A9]">{service.title}</h2>
+                      <h2 className="text-3xl font-serif font-bold text-secondary">{service.title}</h2>
                     </div>
                     <p className="text-lg text-steel-gray mb-8 leading-relaxed">
                       {service.description}
@@ -62,14 +62,14 @@ const Services = () => {
                     <ul className="space-y-3 mb-8">
                       {service.highlights.map((highlight, highlightIndex) => (
                         <li key={highlightIndex} className="flex items-center space-x-3">
-                          <div className="w-2 h-2 bg-copper rounded-full"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full"></div>
                           <span className="text-steel-gray">{highlight}</span>
                         </li>
                       ))}
                     </ul>
                     <Link
                       to={`/services/${service.slug}`}
-                      className="inline-flex items-center space-x-2 bg-copper text-white px-6 py-3 rounded-lg font-semibold hover:bg-copper/90 transition-colors group"
+                      className="inline-flex items-center space-x-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors group"
                     >
                       <span>Learn More</span>
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -105,7 +105,7 @@ const Services = () => {
                           decoding="async"
                         />
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-tr from-navy/20 to-transparent rounded-2xl group-hover:opacity-0 transition-opacity duration-500"></div>
+                      <div className="absolute inset-0 bg-gradient-to-tr from-dark/20 to-transparent rounded-2xl group-hover:opacity-0 transition-opacity duration-500"></div>
                     </div>
                   </div>
                 </div>
@@ -116,10 +116,10 @@ const Services = () => {
       </section>
 
       {/* Technology Advantages */}
-      <section className="py-20 bg-cream">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-navy mb-6">Why Choose Our Services?</h2>
+            <h2 className="text-4xl font-serif font-bold text-dark mb-6">Why Choose Our Services?</h2>
             <p className="text-xl text-steel-gray max-w-3xl mx-auto leading-relaxed">
               Our integrated approach ensures your production line is efficient, reliable, and ready for the future.
             </p>
@@ -164,7 +164,7 @@ const Services = () => {
                 <div className="text-3xl mb-4 group-hover:scale-110 transition-transform">
                   {advantage.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-navy mb-3">{advantage.title}</h3>
+                <h3 className="text-xl font-semibold text-dark mb-3">{advantage.title}</h3>
                 <p className="text-steel-gray leading-relaxed">{advantage.description}</p>
               </div>
             ))}
@@ -173,24 +173,24 @@ const Services = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-navy text-white">
+      <section className="py-20 bg-dark text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-serif font-bold mb-6">
             Ready to Optimize Your Production Line?
           </h2>
-          <p className="text-xl text-cream/90 mb-8 leading-relaxed">
+          <p className="text-xl text-light/90 mb-8 leading-relaxed">
             Let's discuss how our packaging and processing solutions can enhance your efficiency, quality, and output.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
-              className="bg-copper text-white px-8 py-4 rounded-lg font-semibold hover:bg-copper/90 transition-colors"
+              className="bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
             >
               Request a Consultation
             </Link>
             <Link
               to="/about"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-navy transition-all"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-light hover:text-dark transition-all"
             >
               Learn More About Us
             </Link>

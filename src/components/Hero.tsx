@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback, useMemo } from 'react';
+import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -62,39 +62,51 @@ const Hero: React.FC = () => {
   const slides: SlideData[] = useMemo(() => [
     {
       image: {
-        src: '/services/installation.jpg',
-        alt: 'Technicians installing industrial processing equipment',
+        src: '/site-images/hero section 1.jpg',
+        alt: 'Advanced sustainable energy solutions in action',
         priority: true,
       },
-      title: 'Engineering Your Success, from Start to Finish.',
-      description: 'We provide world-class end-to-end packaging and processing solutions, empowering your business with efficiency, reliability, and innovation.',
+      title: 'Powering a Sustainable Future.',
+      description: 'We provide cutting-edge renewable energy solutions that drive progress and protect our planet for future generations.',
       ctaLabel: 'Our Services',
       ctaTo: '/services',
-      highlights: ['End-to-End Solutions', 'Seamless Installation', 'Operational Excellence', 'Global Partners'],
+      highlights: ['Renewable Energy', 'Sustainable Infrastructure', 'Innovative Technology', 'Global Impact'],
     },
     {
       image: {
-        src: '/services/consulting.jpg',
-        alt: 'A consultant reviewing blueprints with a client in a factory setting',
+        src: '/site-images/hero section 2.jpg',
+        alt: 'A team of engineers working on a renewable energy project',
         priority: false,
       },
-      title: 'Unmatched Expertise. Unfailing Support.',
-      description: 'From initial consultation and seamless installation to ongoing maintenance and genuine spare parts, our commitment is to your operational excellence.',
+      title: 'Expertise in Every Connection.',
+      description: 'Our team of experts delivers excellence in every project, ensuring seamless integration and optimal performance of your energy systems.',
       ctaLabel: 'Learn About Us',
       ctaTo: '/about',
-      highlights: ['Expert Consultation', 'Reliable Maintenance', 'Genuine Spare Parts', '24/7 Support'],
+      highlights: ['Expert Engineering', 'Seamless Integration', 'Optimal Performance', 'Dedicated Support'],
     },
     {
       image: {
-        src: '/hero/about.jpg',
-        alt: 'A diverse team of engineers collaborating on a project',
+        src: '/site-images/hero section 3.jpg',
+        alt: 'A close-up of high-efficiency solar panels',
         priority: false,
       },
-      title: 'Your Partner in Growth and Innovation.',
-      description: 'Leverage our global partnerships and decades of industry experience to scale your operations and stay ahead of the competition.',
+      title: 'Innovation That Shines.',
+      description: 'We harness the power of innovation to deliver state-of-the-art solar technology that maximizes efficiency and ROI.',
       ctaLabel: 'Contact Us',
       ctaTo: '/contact',
-      highlights: ['Decades of Experience', 'Innovative Solutions', 'Scalable Operations', 'Proven ROI'],
+      highlights: ['Cutting-Edge Technology', 'Maximum Efficiency', 'High ROI', 'Future-Proof Solutions'],
+    },
+    {
+      image: {
+        src: '/site-images/hero section 4.jpg',
+        alt: 'An expansive view of a modern energy facility',
+        priority: false,
+      },
+      title: 'Energy for a Brighter World.',
+      description: 'Join us in building a cleaner, more sustainable world with energy solutions that make a difference.',
+      ctaLabel: 'Discover Our Impact',
+      ctaTo: '/about',
+      highlights: ['Clean Energy', 'Sustainable Future', 'Global Reach', 'Positive Impact'],
     },
   ], []);
 
@@ -237,7 +249,7 @@ const Hero: React.FC = () => {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-[55vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
+      className="relative min-h-[55vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark via-gray-800 to-dark"
       role="region"
       aria-roledescription="image carousel"
       aria-label="Featured floating solar solutions"
@@ -246,7 +258,7 @@ const Hero: React.FC = () => {
     >
       {/* Mobile layout: image carousel above, content below */}
       <div className="md:hidden w-full">
-        <div className="w-full h-[55vh] relative bg-slate-900">
+        <div className="w-full h-[55vh] relative bg-dark">
           <Swiper
             modules={[Autoplay, EffectFade, Keyboard, A11y]}
             effect="fade"
@@ -280,7 +292,7 @@ const Hero: React.FC = () => {
                   sizes="100vw"
                 />
                 {!imagesLoaded[idx] && (
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-800 animate-pulse" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-dark animate-pulse" />
                 )}
               </SwiperSlide>
             ))}
@@ -295,13 +307,13 @@ const Hero: React.FC = () => {
           animate={isLoaded ? 'visible' : 'hidden'}
         >
           <motion.h1
-            className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-white via-blue-100 to-amber-100 bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-light via-primary/70 to-light bg-clip-text text-transparent"
             variants={itemVariants}
           >
             {currentSlide.title}
           </motion.h1>
           <motion.p
-            className="text-base sm:text-lg text-slate-200 mb-6 leading-relaxed"
+            className="text-base sm:text-lg text-light/90 mb-6 leading-relaxed"
             variants={itemVariants}
           >
             {currentSlide.description}
@@ -313,7 +325,7 @@ const Hero: React.FC = () => {
             <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
               <Link
                 to={currentSlide.ctaTo}
-                className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white px-6 py-3 rounded-xl font-semibold text-base shadow-lg inline-flex items-center space-x-2 group transition-all duration-300"
+                className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-semibold text-base shadow-lg inline-flex items-center space-x-2 group transition-all duration-300"
                 aria-label={currentSlide.ctaLabel}
               >
                 <span>{currentSlide.ctaLabel}</span>
@@ -356,7 +368,7 @@ const Hero: React.FC = () => {
         >
           {slides.map((slide, idx) => (
             <SwiperSlide key={idx} className="relative">
-              <div className="absolute inset-0 bg-slate-900">
+              <div className="absolute inset-0 bg-dark">
                 <picture>
                   {/* Mobile source (<=640px). Using desktop image for consistency on mobile */}
                   <source media="(max-width: 640px)" srcSet={slide.image.src} />
@@ -378,12 +390,12 @@ const Hero: React.FC = () => {
                 
                 {/* Loading placeholder */}
                 {!imagesLoaded[idx] && (
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-800 animate-pulse" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-dark animate-pulse" />
                 )}
                 
                 {/* Dynamic gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-transparent to-slate-900/80" />
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-900/40 via-transparent to-slate-900/40" />
+                <div className="absolute inset-0 bg-gradient-to-b from-dark/60 via-transparent to-dark/80" />
+                <div className="absolute inset-0 bg-gradient-to-r from-dark/40 via-transparent to-dark/40" />
               </div>
             </SwiperSlide>
           ))}
@@ -391,7 +403,7 @@ const Hero: React.FC = () => {
 
         {/* Parallax overlay */}
         <motion.div 
-          className="absolute inset-0 bg-slate-900/20" 
+          className="absolute inset-0 bg-dark/20" 
           style={{ opacity: shouldReduceMotion ? 0.2 : overlayOpacity }} 
         />
       </motion.div>
@@ -412,8 +424,8 @@ const Hero: React.FC = () => {
             ease: "easeInOut",
           }}
         >
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-radial from-amber-300/20 via-amber-400/10 to-transparent rounded-full blur-3xl" />
-          <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-gradient-radial from-blue-300/15 via-blue-400/8 to-transparent rounded-full blur-2xl" />
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-radial from-primary/20 via-primary/10 to-transparent rounded-full blur-3xl" />
+          <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-gradient-radial from-secondary/15 via-secondary/5 to-transparent rounded-full blur-2xl" />
         </motion.div>
       )}
 
@@ -427,7 +439,7 @@ const Hero: React.FC = () => {
       >
         {/* Title with enhanced typography */}
         <motion.h1
-          className="text-3xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-white via-blue-100 to-amber-100 bg-clip-text text-transparent"
+          className="text-3xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-light via-primary/70 to-light bg-clip-text text-transparent"
           variants={itemVariants}
         >
           {currentSlide.title}
@@ -435,7 +447,7 @@ const Hero: React.FC = () => {
 
         {/* Description */}
         <motion.p
-          className="text-lg sm:text-xl lg:text-2xl text-slate-200 mb-8 max-w-4xl mx-auto leading-relaxed font-light"
+          className="text-lg sm:text-xl lg:text-2xl text-light/90 mb-8 max-w-4xl mx-auto leading-relaxed font-light"
           variants={itemVariants}
         >
           {currentSlide.description}
@@ -449,7 +461,7 @@ const Hero: React.FC = () => {
           <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
             <Link
               to={currentSlide.ctaTo}
-              className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl inline-flex items-center space-x-3 group transition-all duration-300"
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl inline-flex items-center space-x-3 group transition-all duration-300"
               aria-label={currentSlide.ctaLabel}
             >
               <span>{currentSlide.ctaLabel}</span>
