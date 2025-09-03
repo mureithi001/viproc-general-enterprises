@@ -61,52 +61,40 @@ const Hero: React.FC = () => {
   // Slide data - memoized for performance
   const slides: SlideData[] = useMemo(() => [
     {
-      image: { 
-        src: '/hero/200128-Temp-Website-picture-1 (1).png', 
-        alt: 'Floating solar installation on a pristine lake at golden hour', 
-        priority: true 
+      image: {
+        src: '/services/installation.jpg',
+        alt: 'Technicians installing industrial processing equipment',
+        priority: true,
       },
-      title: 'Power More. Use Less Land.',
-      description: 'Revolutionary floating solar technology that delivers up to 30% higher yields while preserving valuable land and water resources.',
-      ctaLabel: 'Discover Technology',
+      title: 'Engineering Your Success, from Start to Finish.',
+      description: 'We provide world-class end-to-end packaging and processing solutions, empowering your business with efficiency, reliability, and innovation.',
+      ctaLabel: 'Our Services',
       ctaTo: '/services',
-      highlights: ['30% Higher Yield', 'Zero Land Use', 'Rapid Deployment', 'Infinite Scalability']
-    },
-    {
-      image: { 
-        src: '/hero/WhatsApp Image 2025-08-17 at 21.33.43.jpeg', 
-        alt: 'Mountain reservoir with floating solar arrays reducing water evaporation', 
-        priority: false 
-      },
-      title: 'Protect Water. Cut Costs.',
-      description: 'Reduce evaporation by up to 70% while generating clean energy, creating a dual benefit for water conservation and cost reduction.',
-      ctaLabel: 'View Case Studies',
-      ctaTo: '/about',
-      highlights: ['70% Less Evaporation', 'Lower Operations', 'Weather Resilient', 'AI Monitoring']
-    },
-    {
-      image: { 
-        src: '/hero/image.png', 
-        alt: 'Industrial complex with integrated floating solar systems', 
-        priority: false 
-      },
-      title: 'Scale Clean Power Fast.',
-      description: 'Modular floating solar systems engineered for rapid deployment and maximum ROI across industrial and municipal applications.',
-      ctaLabel: 'Request Quote',
-      ctaTo: '/contact',
-      highlights: ['Modular Design', 'Proven ROI', 'Low Maintenance', 'Grid Integration']
+      highlights: ['End-to-End Solutions', 'Seamless Installation', 'Operational Excellence', 'Global Partners'],
     },
     {
       image: {
-        src: '/hero/hero section.jpg',
-        alt: 'Rooftop solar array under clear blue sky with mountain backdrop',
+        src: '/services/consulting.jpg',
+        alt: 'A consultant reviewing blueprints with a client in a factory setting',
         priority: false,
       },
-      title: 'Rooftop Solar, Real Savings',
-      description: 'High-efficiency rooftop PV delivering dependable power and long-term cost reductions for facilities of any size.',
-      ctaLabel: 'Explore Solar PV',
-      ctaTo: '/services',
-      highlights: ['High Efficiency', 'Cost Savings', 'Fast Installation', 'Proven Durability'],
+      title: 'Unmatched Expertise. Unfailing Support.',
+      description: 'From initial consultation and seamless installation to ongoing maintenance and genuine spare parts, our commitment is to your operational excellence.',
+      ctaLabel: 'Learn About Us',
+      ctaTo: '/about',
+      highlights: ['Expert Consultation', 'Reliable Maintenance', 'Genuine Spare Parts', '24/7 Support'],
+    },
+    {
+      image: {
+        src: '/hero/about.jpg',
+        alt: 'A diverse team of engineers collaborating on a project',
+        priority: false,
+      },
+      title: 'Your Partner in Growth and Innovation.',
+      description: 'Leverage our global partnerships and decades of industry experience to scale your operations and stay ahead of the competition.',
+      ctaLabel: 'Contact Us',
+      ctaTo: '/contact',
+      highlights: ['Decades of Experience', 'Innovative Solutions', 'Scalable Operations', 'Proven ROI'],
     },
   ], []);
 
@@ -324,11 +312,11 @@ const Hero: React.FC = () => {
           >
             <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
               <Link
-                to="/contact"
+                to={currentSlide.ctaTo}
                 className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white px-6 py-3 rounded-xl font-semibold text-base shadow-lg inline-flex items-center space-x-2 group transition-all duration-300"
                 aria-label={currentSlide.ctaLabel}
               >
-                <span>Request Quote</span>
+                <span>{currentSlide.ctaLabel}</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
@@ -460,11 +448,11 @@ const Hero: React.FC = () => {
         >
           <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
             <Link
-              to="/contact"
+              to={currentSlide.ctaTo}
               className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl inline-flex items-center space-x-3 group transition-all duration-300"
               aria-label={currentSlide.ctaLabel}
             >
-              <span>Request Quote</span>
+              <span>{currentSlide.ctaLabel}</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>

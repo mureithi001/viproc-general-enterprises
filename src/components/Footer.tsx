@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
@@ -10,24 +9,24 @@ const Footer = () => {
             <div className="flex items-center space-x-3 mb-6">
               <img
                 src="/logo/logo-white.svg"
-                alt="Floating Solar Africa logo"
+                alt="Viproc General Enterprises logo"
                 className="h-10 w-auto object-contain"
               />
-              <span className="sr-only">Floating Solar</span>
+              <span className="sr-only">Viproc General Enterprises</span>
             </div>
 
             <p className="text-white text-sm leading-relaxed">
-              Engineering the future of renewable energy through innovative floating solar solutions.
+              World-class processing and packaging solutions that empower businesses.
             </p>
           </div>
 
           <div>
             <h3 className="font-semibold mb-4 text-white">Services</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/services/solar-pv" className="hover:text-white transition-colors">Solar PV</a></li>
-              <li><a href="/services/electrical-power" className="hover:text-white transition-colors">Electrical & Power</a></li>
-              <li><a href="/services/water-solutions" className="hover:text-white transition-colors">Water Solutions</a></li>
-              <li><a href="/services/floating-solar" className="hover:text-white transition-colors">Floating Solar</a></li>
+              <li><a href="/services/end-of-line-equipment" className="hover:text-white transition-colors">Equipment Supply</a></li>
+              <li><a href="/services/installation-commissioning" className="hover:text-white transition-colors">Installation</a></li>
+              <li><a href="/services/spare-parts-support" className="hover:text-white transition-colors">Parts & Support</a></li>
+              <li><a href="/services/consulting-training" className="hover:text-white transition-colors">Consulting & Training</a></li>
             </ul>
           </div>
 
@@ -46,34 +45,22 @@ const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-white" />
-                <span>info@floatingsolarafrica.com</span>
+                <a href="mailto:viproc.g.enterprises@gmail.com" className="hover:underline">viproc.g.enterprises@gmail.com</a>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-white" />
-                <a href="tel:+254790619961" className="hover:underline">+254 790 619961</a>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-white" />
-                <a href="tel:+254727611034" className="hover:underline">+254 727 611034</a>
+                <a href="tel:+254728968792" className="hover:underline">+254 728 968 792</a>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-white" />
-                <span>Ruaraka Square F1, Thika Road</span>
+                <span>Kenya</span>
               </div>
-            </div>
-            <div className="flex space-x-4 mt-6">
-              <a href="#" className="text-white hover:text-white transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-white hover:text-white transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
             </div>
           </div>
         </div>
 
         <div className="border-t mt-12 pt-8 text-center text-sm text-white/90" style={{ borderColor: 'rgba(255,255,255,0.2)' }}>
-          <p>&copy; 2025 Floating Solar. All rights reserved.</p>
+          <p>&copy; 2025 Viproc General Enterprises. All rights reserved.</p>
         </div>
       </div>
     </footer>

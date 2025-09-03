@@ -1,7 +1,6 @@
-import React from 'react';
-import { Zap, Droplets, Shield, Settings, ArrowRight, Wrench, Waves } from 'lucide-react';
+import { Package, Wrench, LifeBuoy, BrainCircuit, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { services, getServiceCategories } from '../data/services';
+import { services } from '../data/services';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -10,18 +9,16 @@ import 'swiper/css/pagination';
 const Services = () => {
   const getServiceIcon = (category: string) => {
     switch (category) {
-      case 'Solar Technology':
-        return Zap;
-      case 'Power Systems':
-        return Settings;
-      case 'Water Systems':
-        return Droplets;
-      case 'Automation':
+      case 'Equipment Solutions':
+        return Package;
+      case 'Technical Services':
         return Wrench;
-      case 'Floating Technology':
-        return Waves;
+      case 'Support Services':
+        return LifeBuoy;
+      case 'Advisory Services':
+        return BrainCircuit;
       default:
-        return Zap;
+        return Package;
     }
   };
 
@@ -31,11 +28,10 @@ const Services = () => {
       <section className="py-20 bg-gradient-to-br from-navy to-steel-gray text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl lg:text-6xl font-serif font-bold mb-6">
-            Comprehensive Energy Services
+            Our Packaging & Processing Services
           </h1>
           <p className="text-xl lg:text-2xl text-cream/90 leading-relaxed">
-            From design to deployment, our integrated services deliver 
-            maximum efficiency while preserving environmental integrity.
+            End-to-end solutions designed to optimize your production line, from equipment supply to aftermarket support.
           </p>
         </div>
       </section>
@@ -47,72 +43,72 @@ const Services = () => {
             {services.map((service, index) => {
               const ServiceIcon = getServiceIcon(service.category);
               return (
-              <div
-                key={index}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                }`}
-              >
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center ring-1 ring-[#3A65A9]/20">
-                      <ServiceIcon className="w-8 h-8 text-[#3A65A9]" />
+                <div
+                  key={index}
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${
+                    index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+                  }`}
+                >
+                  <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                    <div className="flex items-center space-x-4 mb-6">
+                      <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center ring-1 ring-[#3A65A9]/20">
+                        <ServiceIcon className="w-8 h-8 text-[#3A65A9]" />
+                      </div>
+                      <h2 className="text-3xl font-serif font-bold text-[#3A65A9]">{service.title}</h2>
                     </div>
-                    <h2 className="text-3xl font-serif font-bold text-[#3A65A9]">{service.title}</h2>
+                    <p className="text-lg text-steel-gray mb-8 leading-relaxed">
+                      {service.description}
+                    </p>
+                    <ul className="space-y-3 mb-8">
+                      {service.highlights.map((highlight, highlightIndex) => (
+                        <li key={highlightIndex} className="flex items-center space-x-3">
+                          <div className="w-2 h-2 bg-copper rounded-full"></div>
+                          <span className="text-steel-gray">{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      to={`/services/${service.slug}`}
+                      className="inline-flex items-center space-x-2 bg-copper text-white px-6 py-3 rounded-lg font-semibold hover:bg-copper/90 transition-colors group"
+                    >
+                      <span>Learn More</span>
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </div>
-                  <p className="text-lg text-steel-gray mb-8 leading-relaxed">
-                    {service.description}
-                  </p>
-                  <ul className="space-y-3 mb-8">
-                    {service.highlights.map((highlight, highlightIndex) => (
-                      <li key={highlightIndex} className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-copper rounded-full"></div>
-                        <span className="text-steel-gray">{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    to={`/services/${service.slug}`}
-                    className="inline-flex items-center space-x-2 bg-copper text-white px-6 py-3 rounded-lg font-semibold hover:bg-copper/90 transition-colors group"
-                  >
-                    <span>Learn More</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-                <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                  <div className="relative group cursor-pointer">
-                    {service.images.length > 1 ? (
-                      <Swiper
-                        modules={[Pagination, A11y, Autoplay]}
-                        pagination={{ clickable: true }}
-                        autoplay={{ delay: 4000, disableOnInteraction: false }}
-                        className="rounded-2xl shadow-2xl"
-                      >
-                        {service.images.map((imgSrc, i) => (
-                          <SwiperSlide key={i}>
-                            <img
-                              src={imgSrc}
-                              alt={`${service.title} ${i + 1}`}
-                              className="rounded-2xl w-full h-full object-cover"
-                              loading={i === 0 ? 'eager' : 'lazy'}
-                              decoding="async"
-                            />
-                          </SwiperSlide>
-                        ))}
-                      </Swiper>
-                    ) : (
-                      <img
-                        src={service.images[0]}
-                        alt={service.title}
-                        className="rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
-                        loading="eager"
-                        decoding="async"
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-navy/20 to-transparent rounded-2xl group-hover:opacity-0 transition-opacity duration-500"></div>
+                  <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
+                    <div className="relative group cursor-pointer">
+                      {service.images.length > 1 ? (
+                        <Swiper
+                          modules={[Pagination, A11y, Autoplay]}
+                          pagination={{ clickable: true }}
+                          autoplay={{ delay: 4000, disableOnInteraction: false }}
+                          className="rounded-2xl shadow-2xl"
+                        >
+                          {service.images.map((imgSrc, i) => (
+                            <SwiperSlide key={i}>
+                              <img
+                                src={imgSrc}
+                                alt={`${service.title} ${i + 1}`}
+                                className="rounded-2xl w-full h-full object-cover"
+                                loading={i === 0 ? 'eager' : 'lazy'}
+                                decoding="async"
+                              />
+                            </SwiperSlide>
+                          ))}
+                        </Swiper>
+                      ) : (
+                        <img
+                          src={service.images[0]}
+                          alt={service.title}
+                          className="rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                          loading="eager"
+                          decoding="async"
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-tr from-navy/20 to-transparent rounded-2xl group-hover:opacity-0 transition-opacity duration-500"></div>
+                    </div>
                   </div>
                 </div>
-              </div>
               );
             })}
           </div>
@@ -125,39 +121,39 @@ const Services = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif font-bold text-navy mb-6">Why Choose Our Services?</h2>
             <p className="text-xl text-steel-gray max-w-3xl mx-auto leading-relaxed">
-              Our comprehensive approach delivers significant advantages across all energy sectors
+              Our integrated approach ensures your production line is efficient, reliable, and ready for the future.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: 'Technical Expertise',
-                description: 'Multidisciplinary team with deep knowledge in solar, power systems, water, and automation',
-                icon: '🔧'
+                title: 'Global Technology',
+                description: 'Access to leading machinery from our international partners in Italy, India, and China.',
+                icon: '🌍'
               },
               {
-                title: 'Quality Assurance',
-                description: 'Every project designed and built with precision, ensuring long-term performance and safety',
-                icon: '✓'
+                title: 'Integrated Solutions',
+                description: 'A single point of contact for equipment, installation, training, and aftermarket support.',
+                icon: '🔗'
               },
               {
-                title: 'Custom Solutions',
-                description: 'Tailored solutions that adapt to each client\'s unique needs and requirements',
-                icon: '⚙️'
+                title: 'Expert Team',
+                description: 'Experienced engineers and technicians dedicated to your success and operational excellence.',
+                icon: '👷'
               },
               {
-                title: 'Innovation Focus',
-                description: 'Staying at the forefront of renewable energy technology and automation systems',
-                icon: '💡'
+                title: 'Reliable Support',
+                description: 'Fast spare parts delivery and responsive aftermarket service to minimize downtime.',
+                icon: '🛠️'
               },
               {
-                title: 'Proven Results',
-                description: 'Track record of successful projects across diverse sectors and applications',
-                icon: '📊'
+                title: 'Customized Approach',
+                description: 'Solutions tailored to your specific production needs, goals, and facility requirements.',
+                icon: '🎯'
               },
               {
-                title: 'Full Support',
-                description: 'Comprehensive service from initial consultation through ongoing maintenance',
+                title: 'Long-Term Partnership',
+                description: 'We are committed to supporting your growth and efficiency for years to come.',
                 icon: '🤝'
               }
             ].map((advantage, index) => (
@@ -180,24 +176,23 @@ const Services = () => {
       <section className="py-20 bg-navy text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-serif font-bold mb-6">
-            Ready to Implement Your Service?
+            Ready to Optimize Your Production Line?
           </h2>
           <p className="text-xl text-cream/90 mb-8 leading-relaxed">
-            Our team of experts is ready to design and deploy the perfect 
-            energy solution for your specific requirements.
+            Let's discuss how our packaging and processing solutions can enhance your efficiency, quality, and output.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
               className="bg-copper text-white px-8 py-4 rounded-lg font-semibold hover:bg-copper/90 transition-colors"
             >
-              Request Consultation
+              Request a Consultation
             </Link>
             <Link
-              to="/projects"
+              to="/about"
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-navy transition-all"
             >
-              View Projects
+              Learn More About Us
             </Link>
           </div>
         </div>

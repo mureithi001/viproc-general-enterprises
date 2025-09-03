@@ -7,29 +7,29 @@ import { services, type Service } from '../data/services';
 
 const Home = () => {
   const stats = [
-    { icon: Zap, number: '5+', label: 'MW Installed', description: 'Megawatts of clean energy delivered' },
-    { icon: Award, number: '3+', label: 'Awards Won', description: 'Industry recognition for innovation' },
-    { icon: Users, number: '20+', label: 'Team Members', description: 'Engineering experts Africa-wide' },
+    { icon: Zap, number: '150+', label: 'Projects Delivered', description: 'Successfully completed projects worldwide' },
+    { icon: Award, number: '98%', label: 'Client Satisfaction', description: 'Committed to exceeding client expectations' },
+    { icon: Users, number: '20+', label: 'Years of Experience', description: 'Decades of industry-leading expertise' },
   ];
 
   // Partners carousel data and refs
   const partnerItems = [
-    { src: '/partners/Fronius-Logo.webp', alt: 'Fronius' },
-    { src: '/partners/Growatt-logo-new-GB.png', alt: 'Growatt' },
-    { src: '/partners/Hoppecke-LOGO.png', alt: 'Hoppecke' },
-    { src: '/partners/JA-Solar-Logo.png', alt: 'JA Solar' },
-    { src: '/partners/Solar_MD-Kathea-Energy.webp', alt: 'Solar MD' },
-    { src: '/partners/SunPower.png', alt: 'SunPower' },
-    { src: '/partners/Tesvolt_Logo.png', alt: 'Tesvolt' },
-    { src: '/partners/Trinasolar_Logo_EN.png', alt: 'Trina Solar' },
-    { src: '/partners/byd.png', alt: 'BYD' },
-    { src: '/partners/canadian-solar_logo-300x169.webp', alt: 'Canadian Solar' },
-    { src: '/partners/caracal-logo.png', alt: 'Caracal' },
-    { src: '/partners/jinko-solar-logo.png', alt: 'Jinko Solar' },
-    { src: '/partners/k2_systems_logo.png', alt: 'K2 Systems' },
-    { src: '/partners/longi-logo.png', alt: 'LONGi' },
-    { src: '/partners/sungrow_logo.png', alt: 'Sungrow' },
-    { src: '/partners/trojan-battery-company-logo.png', alt: 'Trojan Battery Company' },
+    { src: '/partners/KHS-logo.png', alt: 'KHS' },
+    { src: '/partners/Krones-Logo.png', alt: 'Krones' },
+    { src: '/partners/Sidel-Logo.png', alt: 'Sidel' },
+    { src: '/partners/Tetra-Pak-Logo.png', alt: 'Tetra Pak' },
+    { src: '/partners/Sacmi-Logo.png', alt: 'Sacmi' },
+    { src: '/partners/Bosch-Packaging-Logo.png', alt: 'Bosch Packaging' },
+    { src: '/partners/GEA-Logo.png', alt: 'GEA' },
+    { src: '/partners/Alfa-Laval-Logo.png', alt: 'Alfa Laval' },
+    { src: '/partners/SPX-Flow-Logo.png', alt: 'SPX Flow' },
+    { src: '/partners/Ishida-Logo.png', alt: 'Ishida' },
+    { src: '/partners/Markem-Imaje-Logo.png', alt: 'Markem-Imaje' },
+    { src: '/partners/Videojet-Logo.png', alt: 'Videojet' },
+    { src: '/partners/Domino-Printing-Logo.png', alt: 'Domino Printing' },
+    { src: '/partners/Rockwell-Automation-Logo.png', alt: 'Rockwell Automation' },
+    { src: '/partners/Siemens-Logo.png', alt: 'Siemens' },
+    { src: '/partners/Schneider-Electric-Logo.png', alt: 'Schneider Electric' },
   ];
   const partnersScrollerRef = useRef<HTMLDivElement | null>(null);
   const autoScrollId = useRef<number | null>(null);
@@ -100,9 +100,9 @@ const Home = () => {
       <section className="py-16 sm:py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
-            <h2 className="text-4xl lg:text-5xl font-serif font-bold text-[#3A65A9] mb-4 lg:mb-6">About Floating Solar Africa</h2>
+            <h2 className="text-4xl lg:text-5xl font-serif font-bold text-[#3A65A9] mb-4 lg:mb-6">About Viproc General Enterprises</h2>
             <p className="text-base lg:text-lg text-[#818286] leading-relaxed mb-6">
-              We design, engineer, and deploy innovative floating solar solutions tailored to Africa’s unique water and energy needs, delivering sustainable power with minimal land use.
+              We provide world-class end-to-end packaging and processing solutions, empowering your business with efficiency, reliability, and innovation.
             </p>
             <Link to="/about" className="inline-flex items-center space-x-2 text-white bg-[#3A65A9] hover:bg-[#315590] px-6 py-3 rounded-lg font-semibold transition-colors">
               <span>Read more</span>
@@ -111,8 +111,8 @@ const Home = () => {
           </div>
           <div className="relative">
             <img
-              src="https://images.pexels.com/photos/8853509/pexels-photo-8853509.jpeg?auto=compress&cs=tinysrgb&w=800"
-              alt="Our team deploying floating solar"
+              src="/hero/about.jpg"
+              alt="A diverse team of engineers collaborating in a modern office"
               className="rounded-2xl shadow-2xl"
               loading="lazy"
             />
@@ -127,7 +127,7 @@ const Home = () => {
           <div className="flex items-end justify-between mb-8">
             <div>
               <h2 className="text-4xl font-serif font-bold text-[#3A65A9]">Our Services</h2>
-              <p className="text-[#818286] mt-2">From concept to commissioning—comprehensive clean energy solutions.</p>
+              <p className="text-[#818286] mt-2">From concept to commissioning—comprehensive packaging and processing solutions.</p>
             </div>
             <Link to="/services" className="hidden sm:inline-flex items-center space-x-2 text-[#3A65A9] hover:text-[#2d4a87] font-semibold">
               <span>View all</span>
@@ -166,12 +166,11 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-5xl font-serif font-bold text-navy mb-6 leading-tight">
-                Engineering Tomorrow's Energy Solutions
+                Innovative Solutions for Modern Production
               </h2>
               <p className="text-lg text-steel-gray mb-8 leading-relaxed">
-                Our innovative floating solar systems combine cutting-edge photovoltaic technology 
-                with advanced marine engineering, delivering sustainable energy solutions that 
-                preserve valuable land resources while maximizing efficiency.
+                Our advanced systems combine cutting-edge technology with robust engineering, 
+                delivering reliable and efficient solutions that maximize your output and minimize downtime.
               </p>
               <Link
                 to="/services"
@@ -258,11 +257,11 @@ const Home = () => {
         </div>
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative">
           <h2 className="text-4xl lg:text-5xl font-serif font-bold mb-6">
-            Ready to Transform Your Energy Future?
+            Ready to Optimize Your Production Line?
           </h2>
           <p className="text-xl text-steel-gray mb-8 leading-relaxed">
-            Partner with us to develop innovative floating solar solutions 
-            tailored to your specific needs and environmental requirements.
+            Partner with us to implement state-of-the-art packaging and processing solutions 
+            tailored to your specific needs and operational goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

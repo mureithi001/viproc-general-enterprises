@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
@@ -27,26 +27,20 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: 'info@floatingsolarafrica.com',
-      description: 'Send us a message anytime'
+      details: 'viproc.g.enterprises@gmail.com',
+      description: 'Get in touch via email'
     },
     {
       icon: Phone,
       title: 'Phone',
-      details: '+254 790 619961\n+254 727 611034',
-      description: 'Mon-Fri, 8am-6pm PST'
+      details: '+254 728 968 792',
+      description: 'Call us for direct inquiries'
     },
     {
       icon: MapPin,
-      title: 'Headquarters',
-      details: 'Ruaraka Square F1\nThika Road, Nairobi',
-      description: 'Visit our main office'
-    },
-    {
-      icon: Clock,
-      title: 'Response Time',
-      details: '24 hours',
-      description: 'Average response time'
+      title: 'Location',
+      details: 'Kenya',
+      description: 'Serving clients across East Africa'
     }
   ];
 
@@ -56,11 +50,10 @@ const Contact = () => {
       <section className="py-20 bg-gradient-to-br from-navy to-steel-gray text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl lg:text-6xl font-serif font-bold mb-6">
-            Get In Touch
+            Contact Us
           </h1>
           <p className="text-xl lg:text-2xl text-cream/90 leading-relaxed">
-            Ready to explore floating solar solutions for your project? 
-            Our team is here to help you get started.
+            Have a question or a project in mind? We'd love to hear from you.
           </p>
         </div>
       </section>
@@ -68,7 +61,7 @@ const Contact = () => {
       {/* Contact Information */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {contactInfo.map((info, index) => (
               <div
                 key={index}
@@ -132,20 +125,6 @@ const Contact = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label htmlFor="company" className="block text-sm font-semibold text-navy mb-2">
-                  Company/Organization
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-cream rounded-lg focus:border-copper focus:outline-none transition-colors"
-                  placeholder="Your company name"
-                />
-              </div>
-              <div>
                 <label htmlFor="subject" className="block text-sm font-semibold text-navy mb-2">
                   Subject *
                 </label>
@@ -158,11 +137,10 @@ const Contact = () => {
                   className="w-full px-4 py-3 border-2 border-cream rounded-lg focus:border-copper focus:outline-none transition-colors"
                 >
                   <option value="">Select a topic</option>
-                  <option value="consultation">Project Consultation</option>
-                  <option value="quote">Request Quote</option>
-                  <option value="partnership">Partnership Inquiry</option>
-                  <option value="careers">Career Opportunities</option>
-                  <option value="media">Media/Press</option>
+                  <option value="equipment">Equipment Inquiry</option>
+                  <option value="support">Support Request</option>
+                  <option value="consulting">Consulting & Training</option>
+                  <option value="partnership">Partnership</option>
                   <option value="other">Other</option>
                 </select>
               </div>
@@ -192,47 +170,6 @@ const Contact = () => {
               <span>Send Message</span>
             </button>
           </form>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-20 bg-steel-gray">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="p-12">
-                <h3 className="text-3xl font-serif font-bold text-navy mb-6">Visit Our Office</h3>
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-start space-x-3">
-                    <MapPin className="w-5 h-5 text-copper mt-1" />
-                    <div>
-                      <div className="font-semibold text-navy">Headquarters</div>
-                      <div className="text-steel-gray">Ruaraka Square F1<br />Thika Road, Nairobi</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Clock className="w-5 h-5 text-copper mt-1" />
-                    <div>
-                      <div className="font-semibold text-navy">Office Hours</div>
-                      <div className="text-steel-gray">Monday - Friday: 8:00 AM - 6:00 PM EAT<br />Weekend: By appointment</div>
-                    </div>
-                  </div>
-                </div>
-                <p className="text-steel-gray">
-                  Our Nairobi headquarters houses our engineering team, research lab, 
-                  and executive offices. Schedule a visit to see our latest floating solar 
-                  prototypes and meet with our technical experts.
-                </p>
-              </div>
-              <div className="h-80 lg:h-auto bg-gradient-to-br from-navy to-copper flex items-center justify-center">
-                <div className="text-white text-center">
-                  <MapPin className="w-16 h-16 mx-auto mb-4" />
-                  <div className="text-xl font-semibold">Interactive Map</div>
-                  <div className="text-cream/90">Nairobi, Kenya</div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </div>
