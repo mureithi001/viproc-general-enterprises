@@ -14,42 +14,6 @@
   }
 }
 
-/* Solar Rays Animation */
-.solar-rays {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(180, 83, 9, 0.4) 0%, rgba(180, 83, 9, 0.2) 40%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(1px);
-}
-
-.solar-rays::before,
-.solar-rays::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  filter: blur(0.5px);
-}
-
-.solar-rays::before {
-  width: 150px;
-  height: 150px;
-  background: radial-gradient(circle, rgba(180, 83, 9, 0.3) 0%, rgba(180, 83, 9, 0.1) 50%, transparent 70%);
-}
-
-.solar-rays::after {
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, rgba(180, 83, 9, 0.5) 0%, rgba(180, 83, 9, 0.2) 60%, transparent 70%);
-}
-
 /* Water Surface Animation */
 .water-surface {
   position: absolute;
@@ -145,7 +109,6 @@
     scroll-behavior: auto !important;
   }
   
-  .solar-rays,
   .water-surface::before {
     animation: none !important;
   }

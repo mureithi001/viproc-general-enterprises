@@ -17,11 +17,11 @@ const ServiceDetail = () => {
           <h1 className="text-4xl font-serif font-bold text-dark mb-4">Service Not Found</h1>
           <p className="text-gray-600 mb-8">The service you're looking for doesn't exist.</p>
           <Link
-            to="/solutions"
+            to="/contracting"
             className="inline-flex items-center space-x-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
-            <span>Back to Solutions</span>
+            <span>Back to Contracting Services</span>
           </Link>
         </div>
       </div>
@@ -30,13 +30,11 @@ const ServiceDetail = () => {
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case 'Solar Technology':
+      case 'Construction':
         return Zap;
-      case 'Environmental':
-        return Shield;
-      case 'Power Systems':
+      case 'Electrical':
         return Settings;
-      case 'Water Treatment':
+      case 'Water':
         return Droplets;
       default:
         return Zap;
@@ -191,7 +189,7 @@ const ServiceDetail = () => {
           </h2>
           <p className="text-xl text-light/90 mb-8 leading-relaxed">
             Our team of experts is ready to design and deploy the perfect 
-            solution for your specific requirements.
+            service for your specific requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -62,39 +62,39 @@ const Hero: React.FC = () => {
   const slides: SlideData[] = useMemo(() => [
     {
       image: {
-        src: '/site-images/Innovative Solutions for Modern Production.jpg',
-        alt: 'Advanced packaging and processing machinery in a modern facility',
+        src: '/hero/hero-1.webp',
+        alt: 'A modern building under construction',
         priority: true,
       },
-      title: 'Engineering Excellence in Packaging & Processing.',
-      description: 'We deliver world-class, end-to-end solutions that empower your business with unparalleled efficiency, reliability, and innovation.',
-      ctaLabel: 'Explore Our Services',
-      ctaTo: '/services',
-      highlights: ['Advanced Machinery', 'Seamless Integration', 'Turnkey Solutions', 'Proven Expertise'],
+      title: 'Building the Future, Restoring the Past.',
+      description: 'Viproc General Enterprises is a leader in general contracting, delivering high-quality construction, renovation, and infrastructure projects.',
+      ctaLabel: 'Explore Our Projects',
+      ctaTo: '/projects',
+      highlights: ['Quality Construction', 'Historic Renovations', 'Infrastructure Projects', 'Client-Focused'],
     },
     {
       image: {
-        src: '/site-images/End-of-Line Equipment 1.jpg',
-        alt: 'A state-of-the-art production line with automated equipment',
+        src: '/hero/hero-2.webp',
+        alt: 'A team of construction workers collaborating on a project',
         priority: false,
       },
-      title: 'Global Technology, Local Partnership.',
-      description: 'By sourcing state-of-the-art equipment from leading global manufacturers, we provide cutting-edge solutions backed by dedicated local support.',
+      title: 'Excellence in Every Detail.',
+      description: 'Our team of experienced professionals is dedicated to delivering projects on time, within budget, and to the highest standards of quality and safety.',
       ctaLabel: 'Learn About Us',
       ctaTo: '/about',
-      highlights: ['Global Partnerships', 'Cutting-Edge Tech', 'Local Support', 'Quality Assurance'],
+      highlights: ['Experienced Team', 'On-Time Delivery', 'Safety First', 'Quality Assurance'],
     },
     {
       image: {
-        src: '/site-images/Installation & Commissioning 1.jpg',
-        alt: 'An engineer working on the installation of industrial equipment',
+        src: '/hero/hero-3.webp',
+        alt: 'A completed modern architectural building',
         priority: false,
       },
-      title: 'Your Partner in Production.',
-      description: 'Our commitment extends beyond installation. We provide comprehensive aftermarket support and training to ensure your operations run at peak performance.',
+      title: 'Your Vision, Our Mission.',
+      description: 'We partner with our clients to turn their vision into reality. From concept to completion, we are your trusted partner in construction.',
       ctaLabel: 'Contact Us Today',
       ctaTo: '/contact',
-      highlights: ['Aftermarket Support', 'Expert Training', 'Spare Parts', 'Long-Term Success'],
+      highlights: ['Client Collaboration', 'Innovative Solutions', 'Sustainable Practices', 'End-to-End Service'],
     },
   ], []);
 
@@ -240,7 +240,7 @@ const Hero: React.FC = () => {
       className="relative min-h-[55vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark via-gray-800 to-dark"
       role="region"
       aria-roledescription="image carousel"
-      aria-label="Featured floating solar solutions"
+      aria-label="Featured construction projects"
       tabIndex={0}
       onKeyDown={handleKeyNavigation}
     >
@@ -396,26 +396,6 @@ const Hero: React.FC = () => {
         />
       </motion.div>
 
-      {/* Solar rays effect */}
-      {!shouldReduceMotion && (
-        <motion.div
-          className="absolute inset-0 z-10 pointer-events-none hidden sm:block"
-          initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-          animate={{ 
-            opacity: [0.3, 0.6, 0.3], 
-            scale: [0.8, 1.1, 0.8],
-            rotate: [-10, 10, -10]
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-radial from-primary/20 via-primary/10 to-transparent rounded-full blur-3xl" />
-          <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-gradient-radial from-secondary/15 via-secondary/5 to-transparent rounded-full blur-2xl" />
-        </motion.div>
-      )}
 
       {/* Main Content */}
       <motion.div

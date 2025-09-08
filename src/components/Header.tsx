@@ -37,9 +37,9 @@ const Header = () => {
             <img
               src="/logo/logo 3.jpeg"
               alt="Viproc General Enterprises logo"
-              className="h-12 w-auto object-contain drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)]"
+              className="h-12 w-auto object-contain"
             />
-            <span className="sr-only">Floating Solar</span>
+            <span className="sr-only">Viproc General Enterprises</span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">

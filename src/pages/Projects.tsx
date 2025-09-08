@@ -4,36 +4,36 @@ import { MapPin, Calendar, Zap, Award } from 'lucide-react';
 const Projects = () => {
   const featuredProjects = [
     {
-      title: 'Lake Mendota Solar Farm',
+      title: 'Lake Mendota Project',
       location: 'Wisconsin, USA',
-      capacity: '50 MW',
+      capacity: 'Large Scale',
       year: '2024',
       image: 'https://images.pexels.com/photos/9800029/pexels-photo-9800029.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Our largest floating solar installation to date, providing clean energy for 15,000 homes while preserving the lake ecosystem.',
-      highlights: ['Advanced anchoring system', 'Real-time monitoring', 'Fish habitat protection']
+      description: 'One of our largest installations to date, showcasing our expertise in large-scale project management and execution.',
+      highlights: ['Advanced construction techniques', 'Real-time project monitoring', 'Environmental preservation measures']
     },
     {
-      title: 'Reservoir Energy Project',
+      title: 'Reservoir Infrastructure Project',
       location: 'California, USA',
-      capacity: '25 MW',
+      capacity: 'Medium Scale',
       year: '2023',
       image: 'https://images.pexels.com/photos/8728380/pexels-photo-8728380.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Drought-resilient floating solar system that reduces water evaporation while generating renewable energy.',
-      highlights: ['Water conservation focus', 'Drought mitigation', 'Grid stabilization']
+      description: 'A drought-resilient infrastructure project that helps conserve water while meeting community needs.',
+      highlights: ['Water conservation focus', 'Drought mitigation', 'Community infrastructure support']
     },
     {
       title: 'Industrial Water Treatment',
       location: 'Texas, USA',
-      capacity: '15 MW',
+      capacity: 'Medium Scale',
       year: '2023',
       image: 'https://images.pexels.com/photos/9800002/pexels-photo-9800002.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Integrated solution combining floating solar with water treatment processes for industrial applications.',
+      description: 'Integrated solution combining our construction expertise with water treatment processes for industrial applications.',
       highlights: ['Process integration', 'Cost reduction', 'Environmental compliance']
     }
   ];
 
   const stats = [
-    { icon: Zap, number: '500+', label: 'MW Deployed' },
+    { icon: Zap, number: '500+', label: 'Major Contracts' },
     { icon: MapPin, number: '25+', label: 'Locations' },
     { icon: Calendar, number: '100+', label: 'Projects Completed' },
     { icon: Award, number: '15+', label: 'Industry Awards' }
@@ -48,7 +48,7 @@ const Projects = () => {
             Project Portfolio
           </h1>
           <p className="text-xl lg:text-2xl text-cream/90 leading-relaxed">
-            Showcasing our innovative floating solar installations 
+            Showcasing our innovative construction projects 
             across diverse environments and applications.
           </p>
         </div>
@@ -143,33 +143,33 @@ const Projects = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: 'Municipal Water Bodies',
-                description: 'Large-scale installations on reservoirs and municipal water supplies',
+                title: 'Municipal Infrastructure',
+                description: 'Large-scale projects for public and municipal utilities.',
                 count: '45+ Projects'
               },
               {
-                title: 'Industrial Applications',
-                description: 'Custom solutions for manufacturing and processing facilities',
+                title: 'Industrial Facilities',
+                description: 'Custom solutions for manufacturing and processing facilities.',
                 count: '30+ Projects'
               },
               {
-                title: 'Agricultural Irrigation',
-                description: 'Farm pond and irrigation reservoir installations',
+                title: 'Agricultural Projects',
+                description: 'Infrastructure for farms and agricultural operations.',
                 count: '25+ Projects'
               },
               {
-                title: 'Wastewater Treatment',
-                description: 'Integration with water treatment and purification systems',
+                title: 'Water Management Systems',
+                description: 'Integration with water treatment and purification systems.',
                 count: '15+ Projects'
               },
               {
-                title: 'Mining Operations',
-                description: 'Tailings pond and mining water body installations',
+                title: 'Mining Infrastructure',
+                description: 'Projects for tailings ponds and mining water bodies.',
                 count: '10+ Projects'
               },
               {
-                title: 'Aquaculture Integration',
-                description: 'Combined solar and fish farming operations',
+                title: 'Specialized Structures',
+                description: 'Unique and complex construction projects.',
                 count: '8+ Projects'
               }
             ].map((type, index) => (
@@ -193,8 +193,8 @@ const Projects = () => {
             Start Your Next Project
           </h2>
           <p className="text-xl text-cream/90 mb-8 leading-relaxed">
-            Ready to join our portfolio of successful floating solar installations? 
-            Let's discuss how we can bring clean energy to your water body.
+            Ready to join our portfolio of successful projects? 
+            Let's discuss how we can bring your vision to life.
           </p>
           <button className="bg-copper text-white px-8 py-4 rounded-lg font-semibold hover:bg-copper/90 transition-colors">
             Schedule Consultation

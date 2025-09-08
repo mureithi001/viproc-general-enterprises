@@ -13,7 +13,7 @@ const Careers = () => {
 
   const openRoles = [
     {
-      title: 'Senior Floating Systems Engineer',
+      title: 'Senior Structural Engineer',
       department: 'Engineering',
       location: 'San Francisco, CA',
       type: 'Full-time'
@@ -31,7 +31,7 @@ const Careers = () => {
       type: 'Full-time'
     },
     {
-      title: 'Solar Installation Technician',
+      title: 'Construction Technician',
       department: 'Field Operations',
       location: 'Multiple Locations',
       type: 'Full-time'
@@ -47,7 +47,7 @@ const Careers = () => {
             Join Our Mission
           </h1>
           <p className="text-xl lg:text-2xl text-cream/90 leading-relaxed">
-            Help us revolutionize renewable energy and create a sustainable future 
+            Help us build the future of infrastructure and create a lasting legacy 
             for generations to come.
           </p>
         </div>
@@ -58,12 +58,12 @@ const Careers = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-serif font-bold text-navy mb-6">Why Join Floating Solar?</h2>
+              <h2 className="text-4xl font-serif font-bold text-navy mb-6">Why Join Viproc General Enterprises?</h2>
               <p className="text-lg text-steel-gray mb-8 leading-relaxed">
-                At Floating Solar, we're not just building renewable energy systems – 
-                we're pioneering a sustainable future. Our team of passionate engineers, 
-                environmental scientists, and innovators work together to solve some of 
-                the world's most pressing energy challenges.
+                At Viproc General Enterprises, we're not just constructing buildings – 
+                we're building the future. Our team of passionate engineers, 
+                project managers, and skilled tradespeople work together to solve some of 
+                the world's most pressing infrastructure challenges.
               </p>
               <div className="grid grid-cols-2 gap-8">
                 <div className="text-center">
@@ -102,7 +102,7 @@ const Careers = () => {
                 <h3 className="text-2xl font-semibold text-navy mb-4">Innovation-Driven</h3>
                 <p className="text-steel-gray leading-relaxed">
                   We encourage creative thinking and provide resources for continuous learning 
-                  and professional growth in cutting-edge renewable energy technologies.
+                  and professional growth in cutting-edge construction technologies.
                 </p>
               </div>
             </div>
@@ -114,7 +114,7 @@ const Careers = () => {
                 <h3 className="text-2xl font-semibold text-navy mb-4">Purpose-Driven</h3>
                 <p className="text-steel-gray leading-relaxed">
                   Every team member contributes to meaningful work that directly impacts 
-                  environmental sustainability and global energy independence.
+                  the communities we serve and the infrastructure that supports them.
                 </p>
               </div>
             </div>
@@ -232,7 +232,7 @@ const Careers = () => {
               </div>
               <h3 className="text-xl font-semibold text-navy mb-3">Join</h3>
               <p className="text-steel-gray">
-                Complete onboarding and begin your journey with our team of renewable energy pioneers.
+                Complete onboarding and begin your journey with our team of construction industry pioneers.
               </p>
             </div>
           </div>
