@@ -10,13 +10,15 @@ export interface Service {
     applications: string[];
     benefits: string[];
     technicalSpecs?: string[];
-    subSections?: {
+    subSections?: ({
       title: string;
       description: string;
       highlights: string[];
       videoPlaceholder?: boolean;
       videoSrc?: string;
-    }[];
+      image?: string;
+      images?: string[];
+    })[];
   };
 }
 
@@ -130,31 +132,61 @@ export const services: Service[] = [
   {
     slug: "installation-commissioning",
     title: "Installation & Commissioning",
-    description: "Our expert technicians ensure your equipment is installed, calibrated, and commissioned for peak performance from day one.",
+    description: "End-to-end installation and commissioning services ensuring your equipment operates at peak performance from day one.",
     highlights: [
-      "Professional installation by certified and experienced engineers.",
-      "Seamless integration with your existing production lines.",
-      "Comprehensive testing and performance calibration.",
-      "Includes on-site handover and initial operator training."
+      "Expert installation by certified technicians following manufacturer specifications",
+      "Comprehensive testing and system calibration for optimal performance",
+      "Minimal downtime with efficient project planning and execution",
+      "Full operator training and documentation handover"
     ],
     images: [
-      "/site-images/Installation & Commissioning 1.jpg",
-      "/site-images/Installation & Commissioning 2.jpg"
+      "/site-images/installation 1.jpg",
+      "/site-images/installation 2.jpg",
+      "/site-images/installation 3.jpg"
     ],
     category: "Technical Services",
     details: {
-      overview: "A successful project extends beyond delivery. Our team manages the complete installation and commissioning process, ensuring your new machinery integrates smoothly into your workflow and operates at maximum efficiency from the start.",
+      overview: "Our professional installation and commissioning services ensure your equipment is set up correctly, calibrated precisely, and operating at peak efficiency. We manage the entire process from site preparation to final handover, minimizing disruption to your operations.",
       applications: [
-        "New production line setup",
-        "Single machine or modular system installation",
-        "Factory relocation and equipment re-commissioning",
-        "Control system upgrades and integration"
+        "New production line installation and commissioning",
+        "Equipment upgrades and retrofits",
+        "Factory relocations and line reconfigurations",
+        "Control system integration and optimization"
       ],
       benefits: [
-        "Minimize downtime during the setup phase",
-        "Guarantee performance that meets manufacturer specifications",
-        "Adherence to the highest safety and compliance standards",
-        "Achieve a faster return on your investment"
+        "Reduced downtime with efficient project management",
+        "Optimal equipment performance from day one",
+        "Compliance with all safety and regulatory standards",
+        "Comprehensive operator training and documentation",
+        "Long-term reliability through proper installation"
+      ],
+      subSections: [
+        {
+          title: "Our Installation Process",
+          description: "A systematic approach to ensure flawless installation and commissioning of your equipment.",
+          highlights: [
+            "Pre-installation site assessment and preparation",
+            "Professional equipment assembly and alignment",
+            "Precision calibration and performance testing",
+            "Safety verification and compliance checks",
+            "Comprehensive operator training and documentation"
+          ],
+          image: "/site-images/installation 1.jpg"
+        },
+        {
+          title: "Why Choose Our Services",
+          description: "Partner with experts who understand the critical nature of proper equipment installation.",
+          highlights: [
+            "Certified technicians with extensive experience",
+            "Minimal disruption to your operations",
+            "Comprehensive documentation and reporting",
+            "Ongoing support and maintenance options"
+          ],
+          images: [
+            "/site-images/installation 2.jpg",
+            "/site-images/installation 3.jpg"
+          ]
+        }
       ]
     }
   },

@@ -11,6 +11,7 @@ import Clients from './pages/Clients';
 import Careers from './pages/Careers';
 import Contact from './pages/Contact';
 import ServiceDetail from './pages/ServiceDetail';
+import InstallationAndCommissioning from './pages/InstallationAndCommissioning';
 
 function App() {
   const ScrollToTop = () => {
@@ -37,6 +38,7 @@ function App() {
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/installation-commissioning" element={<InstallationAndCommissioning />} />
           </Routes>
         </main>
         <Footer />

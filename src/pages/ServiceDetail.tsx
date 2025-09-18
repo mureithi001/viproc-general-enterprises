@@ -1,6 +1,16 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowLeft, CheckCircle, Zap, Settings, Droplets } from 'lucide-react';
+
+type SubSection = {
+  title: string;
+  description: string;
+  highlights: string[];
+  videoPlaceholder?: boolean;
+  videoSrc?: string;
+  image?: string;
+  images?: string[];
+};
 import { services, Service } from '../data/services';
  
 
@@ -8,6 +18,28 @@ const ServiceDetail = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { slug } = useParams<{ slug: string }>();
   const service: Service | undefined = slug ? services.find((s) => s.slug === slug) : undefined;
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slideInterval = useRef<ReturnType<typeof setInterval>>();
+
+  // Auto-advance slides
+  useEffect(() => {
+    if (service?.slug === 'installation-commissioning') {
+      slideInterval.current = setInterval(() => {
+        setCurrentSlide(prev => {
+          const subSection = (service.details.subSections as SubSection[] | undefined)?.find(s => s.images);
+          const maxSlides = subSection?.images?.length || 0;
+          const next = prev + 1;
+          return next >= maxSlides ? 0 : next;
+        });
+      }, 5000);
+      
+      return () => {
+        if (slideInterval.current) {
+          clearInterval(slideInterval.current);
+        }
+      };
+    }
+  }, [service?.slug, service?.details.subSections]);
 
   // Autoplay/pause subsection videos when entering/leaving viewport
   useEffect(() => {
@@ -184,6 +216,35 @@ const ServiceDetail = () => {
                         <source src={sub.videoSrc} type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
+                    ) : (sub as SubSection).image ? (
+                      <img 
+                        src={(sub as SubSection).image} 
+                        alt={sub.title}
+                        className="w-full h-full object-cover rounded-xl shadow"
+                        loading="lazy"
+                      />
+                    ) : (sub as SubSection).images ? (
+                      <div className="relative w-full h-64 overflow-hidden rounded-xl">
+                        {(sub as SubSection).images?.map((img: string, idx: number) => (
+                          <img 
+                            key={idx}
+                            src={img} 
+                            alt={`${sub.title} ${idx + 1}`}
+                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${currentSlide === idx ? 'opacity-100' : 'opacity-0'}`}
+                            loading="lazy"
+                          />
+                        ))}
+                        <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+                          {(sub as SubSection).images?.map((_: string, idx: number) => (
+                            <button
+                              key={idx}
+                              onClick={() => setCurrentSlide(idx)}
+                              className={`w-3 h-3 rounded-full ${currentSlide === idx ? 'bg-primary' : 'bg-white/50'}`}
+                              aria-label={`Go to slide ${idx + 1}`}
+                            />
+                          ))}
+                        </div>
+                      </div>
                     ) : (
                       <div className="w-full aspect-video bg-white rounded-xl border border-dashed border-gray-300 flex items-center justify-center text-gray-500">
                         {sub.videoPlaceholder ? (
@@ -249,6 +310,27 @@ const ServiceDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* Image Gallery */}
+      {service.images && service.images.length > 0 && (
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-4xl font-serif font-bold text-dark mb-12 text-center">Project Gallery</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {service.images.map((image, index) => (
+                <div key={index} className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <img 
+                    src={image} 
+                    alt={`${service.title} - Project ${index + 1}`}
+                    className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Technical Specifications */}
       {service.details.technicalSpecs && (
