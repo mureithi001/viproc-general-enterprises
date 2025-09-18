@@ -82,14 +82,14 @@ const Services = () => {
                           modules={[Pagination, A11y, Autoplay]}
                           pagination={{ clickable: true }}
                           autoplay={{ delay: 4000, disableOnInteraction: false }}
-                          className="rounded-2xl shadow-2xl"
+                          className="rounded-2xl shadow-2xl h-64 md:h-80 lg:h-96"
                         >
                           {service.images.map((imgSrc, i) => (
                             <SwiperSlide key={i}>
                               <img
                                 src={imgSrc}
                                 alt={`${service.title} ${i + 1}`}
-                                className="rounded-2xl w-full h-full object-cover"
+                                className="rounded-2xl w-full h-full object-contain"
                                 loading={i === 0 ? 'eager' : 'lazy'}
                                 decoding="async"
                               />
@@ -97,13 +97,15 @@ const Services = () => {
                           ))}
                         </Swiper>
                       ) : (
-                        <img
-                          src={service.images[0]}
-                          alt={service.title}
-                          className="rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
-                          loading="eager"
-                          decoding="async"
-                        />
+                        <div className="h-64 md:h-80 lg:h-96">
+                          <img
+                            src={service.images[0]}
+                            alt={service.title}
+                            className="rounded-2xl shadow-2xl w-full h-full object-contain"
+                            loading="eager"
+                            decoding="async"
+                          />
+                        </div>
                       )}
                       <div className="absolute inset-0 bg-gradient-to-tr from-dark/20 to-transparent rounded-2xl group-hover:opacity-0 transition-opacity duration-500"></div>
                     </div>

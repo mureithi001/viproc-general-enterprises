@@ -142,7 +142,7 @@ const ServiceDetail = () => {
                 preload="metadata"
                 aria-label={`${service.title} introduction video`}
               >
-                <source src="/site-images/Sup.mp4" type="video/mp4" />
+                <source src={service.slug === 'instrumentation-automation' ? "/site-images/instrumentation.mp4" : "/site-images/Sup.mp4"} type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-tr from-dark/20 to-transparent rounded-2xl"></div>
             </div>
@@ -310,27 +310,6 @@ const ServiceDetail = () => {
           </div>
         </div>
       </section>
-
-      {/* Image Gallery */}
-      {service.images && service.images.length > 0 && (
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <h2 className="text-4xl font-serif font-bold text-dark mb-12 text-center">Project Gallery</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {service.images.map((image, index) => (
-                <div key={index} className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <img 
-                    src={image} 
-                    alt={`${service.title} - Project ${index + 1}`}
-                    className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Technical Specifications */}
       {service.details.technicalSpecs && (
