@@ -38,9 +38,9 @@ const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-light/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center space-x-3" aria-label="Go to Home" onClick={() => handleNavClick('/') }>
+      <div className="w-full">
+        <div className="flex justify-between items-center h-20 max-w-7xl mx-auto pl-3 pr-6 lg:pl-4 lg:pr-8">
+          <Link to="/" className="flex items-center" aria-label="Go to Home" onClick={() => handleNavClick('/')}>
             <img
               src="/logo/logo 3.jpeg"
               alt="Viproc General Enterprises logo"
@@ -149,41 +149,45 @@ const Header = () => {
             </button>
           </div>
         </div>
-
         {isMenuOpen && (
-          <div className="md:hidden bg-light shadow-lg rounded-lg mt-2 py-2">
-            {navigation.map((item) => (
-              <div key={item.name}>
-                <Link
-                  to={item.href}
-                  className={`block px-4 py-3 text-sm font-medium transition-colors duration-200 hover:bg-light hover:text-primary ${
-                    location.pathname === item.href || (item.name === 'Services' && location.pathname.startsWith('/services/'))
-                      ? 'text-primary bg-light/50' 
-                      : 'text-dark'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-                {item.name === 'Services' && (
-                  <div className="pl-8 pb-2">
-                    {services.map((service) => (
-                      <Link
-                        key={service.slug}
-                        to={`/services/${service.slug}`}
-                        className="block px-4 py-2 text-xs text-gray-600 hover:text-primary transition-colors"
-                        onClick={() => {
-                          if (location.pathname === `/services/${service.slug}`) scrollTopSmooth();
-                          setIsMenuOpen(false);
-                        }}
-                      >
-                        {service.title}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+          <div className="md:hidden bg-white shadow-lg">
+            <div className="px-4 pt-2 pb-4 space-y-1">
+              {navigation.map((item) => (
+                <div key={item.name}>
+                  <Link
+                    to={item.href}
+                    className={`block px-4 py-2 text-sm ${
+                      location.pathname === item.href || (item.name === 'Services' && location.pathname.startsWith('/services/'))
+                        ? 'text-primary bg-light/50' 
+                        : 'text-dark'
+                    }`}
+                    onClick={() => {
+                      handleNavClick(item.href);
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    {item.name}
+                  </Link>
+                  {item.name === 'Services' && (
+                    <div className="pl-6">
+                      {services.map((service) => (
+                        <Link
+                          key={service.slug}
+                          to={`/services/${service.slug}`}
+                          className="block px-4 py-2 text-xs text-gray-600 hover:text-primary transition-colors"
+                          onClick={() => {
+                            if (location.pathname === `/services/${service.slug}`) scrollTopSmooth();
+                            setIsMenuOpen(false);
+                          }}
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
