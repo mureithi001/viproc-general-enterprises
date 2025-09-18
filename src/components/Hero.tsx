@@ -9,6 +9,10 @@ const PARALLAX_INTENSITY = 0.5;
 const Hero: React.FC = () => {
   // State
   const [isLoaded, setIsLoaded] = useState(false);
+  const [prefersDataSaver, setPrefersDataSaver] = useState(false);
+  const mobileVideoRef = useRef<HTMLVideoElement | null>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement | null>(null);
+  const [mobileUserPlayed, setMobileUserPlayed] = useState(false);
   
   // Refs
   const heroRef = useRef<HTMLElement>(null);
@@ -43,6 +47,21 @@ const Hero: React.FC = () => {
   // Effects
   useEffect(() => {
     setIsLoaded(true);
+  }, []);
+
+  // Detect slow connection / data saver for network-aware behavior
+  useEffect(() => {
+    if (typeof navigator !== 'undefined' && (navigator as any).connection) {
+      try {
+        const connection = (navigator as any).connection;
+        const slowTypes = ['slow-2g', '2g'];
+        const isSlow = slowTypes.includes(connection.effectiveType);
+        const saveData = Boolean(connection.saveData);
+        setPrefersDataSaver(isSlow || saveData);
+      } catch {
+        setPrefersDataSaver(false);
+      }
+    }
   }, []);
 
   // Animation variants
@@ -115,59 +134,74 @@ return (
     aria-label="Featured packaging solutions"
     tabIndex={0}
   >
-    {/* Mobile layout: video above, content below */}
+    {/* Mobile layout: overlay content inside video */}
     <div className="md:hidden w-full">
       <div className="w-full h-[55vh] relative bg-dark">
         <video
+          ref={mobileVideoRef}
           className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
+          autoPlay={!prefersDataSaver}
           muted
-          loop
+          loop={!prefersDataSaver}
           playsInline
           preload="metadata"
-          poster="/hero/hero-1.webp"
+          poster="/site-images/poster.jpg"
+          onCanPlay={() => setIsLoaded(true)}
         >
           <source src="/hero/hero-section.mp4" type="video/mp4" />
+          <source src="/hero/hero-section.webm" type="video/webm" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-dark/60 via-transparent to-dark/80" />
         <div className="absolute inset-0 bg-gradient-to-r from-dark/40 via-transparent to-dark/40" />
-      </div>
 
-      {/* Mobile content below video */}
-      <motion.div
-        className="px-6 py-8 text-center text-white max-w-3xl mx-auto"
-        variants={contentVariants}
-        initial="hidden"
-        animate={isLoaded ? 'visible' : 'hidden'}
-      >
-        <motion.h1
-          className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-light via-primary/70 to-light bg-clip-text text-transparent"
-          variants={itemVariants}
-        >
-          {heroContent.title}
-        </motion.h1>
-        <motion.p
-          className="text-base sm:text-lg text-light/90 mb-6 leading-relaxed"
-          variants={itemVariants}
-        >
-          {heroContent.description}
-        </motion.p>
+        {/* Mobile overlay content */}
         <motion.div
-          className="flex justify-center"
-          variants={itemVariants}
+          className="absolute inset-0 px-6 py-8 text-center text-white flex flex-col items-center justify-center"
+          variants={contentVariants}
+          initial="hidden"
+          animate={isLoaded ? 'visible' : 'hidden'}
         >
-          <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
-            <Link
-              to={heroContent.ctaTo}
-              className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-semibold text-base shadow-lg inline-flex items-center space-x-2 group transition-all duration-300"
-              aria-label={heroContent.ctaLabel}
-            >
-              <span>{heroContent.ctaLabel}</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+          <motion.h1
+            className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-light via-primary/70 to-light bg-clip-text text-transparent"
+            variants={itemVariants}
+          >
+            {heroContent.title}
+          </motion.h1>
+          <motion.p
+            className="text-base sm:text-lg text-light/90 mb-6 leading-relaxed max-w-3xl"
+            variants={itemVariants}
+          >
+            {heroContent.description}
+          </motion.p>
+          <motion.div className="flex justify-center" variants={itemVariants}>
+            <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
+              <Link
+                to={heroContent.ctaTo}
+                className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-semibold text-base shadow-lg inline-flex items-center space-x-2 group transition-all duration-300"
+                aria-label={heroContent.ctaLabel}
+              >
+                <span>{heroContent.ctaLabel}</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
           </motion.div>
+
+          {/* Play button overlay for slow connections */}
+          {prefersDataSaver && !mobileUserPlayed && (
+            <button
+              className="mt-4 inline-flex items-center px-4 py-2 rounded-lg bg-white/90 text-dark font-semibold shadow"
+              onClick={() => {
+                const v = mobileVideoRef.current;
+                if (v) {
+                  v.play().then(() => setMobileUserPlayed(true)).catch(() => setMobileUserPlayed(true));
+                }
+              }}
+            >
+              Play Video
+            </button>
+          )}
         </motion.div>
-      </motion.div>
+      </div>
     </div>
 
     {/* Desktop layout (md and up): original parallax background with overlaid content */}
@@ -178,15 +212,18 @@ return (
         style={{ y: shouldReduceMotion ? 0 : backgroundY }}
       >
         <video
+          ref={desktopVideoRef}
           className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
+          autoPlay={!prefersDataSaver}
           muted
-          loop
+          loop={!prefersDataSaver}
           playsInline
-          preload="metadata"
-          poster="/hero/hero-1.webp"
+          preload="auto"
+          poster="/site-images/poster.jpg"
+          onCanPlay={() => setIsLoaded(true)}
         >
           <source src="/hero/hero-section.mp4" type="video/mp4" />
+          <source src="/hero/hero-section.webm" type="video/webm" />
         </video>
 
         {/* Overlays */}

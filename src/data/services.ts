@@ -109,7 +109,8 @@ export const services: Service[] = [
             "Ergonomic HMI and fault diagnostics",
             "Compatible with crate/tray/case layouts"
           ],
-          videoPlaceholder: true
+          videoPlaceholder: true,
+          videoSrc: "/site-images/Robopack Case Packing.mp4"
         },
         {
           title: "Linear Filling (Food & Non‑Food)",
@@ -120,7 +121,8 @@ export const services: Service[] = [
             "CIP‑friendly manifolds and valves",
             "Integration with cappers, labelers, and conveyors"
           ],
-          videoPlaceholder: true
+          videoPlaceholder: true,
+          videoSrc: "/site-images/Linear Filling (Food & Non‑Food).mp4"
         }
       ]
     }
