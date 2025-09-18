@@ -28,10 +28,10 @@ const Services = () => {
       <section className="py-20 bg-gradient-to-br from-dark to-gray-800 text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl lg:text-6xl font-serif font-bold mb-6">
-            Our Packaging & Processing Services
+            Packaging Machinery, End‑of‑Line, Spares & Installation
           </h1>
           <p className="text-xl lg:text-2xl text-light/90 leading-relaxed">
-            End-to-end solutions designed to optimize your production line, from equipment supply to aftermarket support.
+            End‑to‑end solutions from equipment supply and line integration to OEM spare parts, installation, commissioning, and aftermarket support.
           </p>
         </div>
       </section>
@@ -119,41 +119,41 @@ const Services = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-dark mb-6">Why Choose Our Services?</h2>
+            <h2 className="text-4xl font-serif font-bold text-dark mb-6">Why Choose Viproc for Packaging?</h2>
             <p className="text-xl text-steel-gray max-w-3xl mx-auto leading-relaxed">
-              Our integrated approach ensures your production line is efficient, reliable, and ready for the future.
+              We combine global machinery sourcing with local engineering to deliver efficient, reliable packaging lines — backed by installation, commissioning, and OEM spares.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 title: 'Global Technology',
-                description: 'Access to leading machinery from our international partners in Italy, India, and China.',
+                description: 'Access leading packaging machinery from international partners in Italy, India, and China.',
                 icon: '🌍'
               },
               {
                 title: 'Integrated Solutions',
-                description: 'A single point of contact for equipment, installation, training, and aftermarket support.',
+                description: 'Single point of contact for equipment supply, line integration, training, and aftermarket support.',
                 icon: '🔗'
               },
               {
                 title: 'Expert Team',
-                description: 'Experienced engineers and technicians dedicated to your success and operational excellence.',
+                description: 'Experienced engineers and certified technicians for installation, commissioning, and optimization.',
                 icon: '👷'
               },
               {
                 title: 'Reliable Support',
-                description: 'Fast spare parts delivery and responsive aftermarket service to minimize downtime.',
+                description: 'Genuine OEM spare parts with rapid delivery and responsive aftermarket service to minimize downtime.',
                 icon: '🛠️'
               },
               {
                 title: 'Customized Approach',
-                description: 'Solutions tailored to your specific production needs, goals, and facility requirements.',
+                description: 'Solutions tailored to your product formats, throughput targets, and facility constraints.',
                 icon: '🎯'
               },
               {
                 title: 'Long-Term Partnership',
-                description: 'We are committed to supporting your growth and efficiency for years to come.',
+                description: 'Committed to supporting your growth with lifecycle services and continuous improvements.',
                 icon: '🤝'
               }
             ].map((advantage, index) => (

@@ -16,7 +16,7 @@ const About = () => {
     { name: 'Rift valley brewing company', logo: null },
   ];
 
-return (
+  return (
     <div className="pt-20">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-navy to-steel-gray text-white">
@@ -25,7 +25,7 @@ return (
             About Viproc General Enterprises
           </h1>
           <p className="text-xl lg:text-2xl text-cream/90 leading-relaxed">
-            World-class processing and packaging solutions that empower businesses.
+            Supplier of packaging machinery, end‑of‑line equipment, OEM spare parts, and professional installation & commissioning.
           </p>
         </div>
       </section>
@@ -38,10 +38,10 @@ return (
               <h2 className="text-4xl font-serif font-bold text-navy mb-6">Our Story</h2>
               <div className="space-y-6 text-lg text-steel-gray leading-relaxed">
                 <p>
-                  At VIPROC General Enterprises, we believe packaging is more than just the final stage of production — it is the point where quality, safety, and brand identity come together. Since our establishment, we have dedicated ourselves to delivering world-class processing and packaging solutions that empower businesses to compete at the highest level.
+                  At VIPROC General Enterprises, we supply a wide variety of packaging and processing machinery from leading global manufacturers. We focus on the points where quality, safety, and brand identity come together — delivering integrated solutions that empower businesses to compete at the highest level.
                 </p>
                 <p>
-                  With over 7 years of experience, we have built a reputation as a trusted provider for companies across East Africa. Our expertise lies in end-of-line equipment, machine installations, spare parts distribution, and integrated packaging systems. We also provide consulting and training services to ensure our clients not only acquire the right solutions but also have the knowledge and support needed to run them efficiently.
+                  With over 7 years of experience across East Africa, our core strengths include end‑of‑line equipment, machine installations and commissioning, OEM spare parts, and integrated packaging systems. We also provide consulting and training so your team can operate and maintain equipment efficiently and safely.
                 </p>
               </div>
             </div>

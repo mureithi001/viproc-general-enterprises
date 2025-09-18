@@ -1,55 +1,53 @@
-import React from 'react';
 import { MapPin, Calendar, Zap, Award } from 'lucide-react';
 
 const Projects = () => {
   const featuredProjects = [
     {
-      title: 'Lake Mendota Project',
-      location: 'Wisconsin, USA',
-      capacity: 'Large Scale',
+      title: 'Complete End‑of‑Line Integration',
+      location: 'Nairobi, Kenya',
+      capacity: 'High Throughput Line',
       year: '2024',
-      image: 'https://images.pexels.com/photos/9800029/pexels-photo-9800029.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'One of our largest installations to date, showcasing our expertise in large-scale project management and execution.',
-      highlights: ['Advanced construction techniques', 'Real-time project monitoring', 'Environmental preservation measures']
+      image: '/site-images/Innovative Solutions for Modern Production.jpg',
+      description: 'Turnkey end‑of‑line solution including case erectors, case packers, conveyor system, shrink wrapping and palletizing with safety interlocks and HMI integration.',
+      highlights: ['Case Erector + Packer', 'Conveyors & Accumulation', 'Shrink Wrapper & Tunnel', 'Palletizer Integration']
     },
     {
-      title: 'Reservoir Infrastructure Project',
-      location: 'California, USA',
-      capacity: 'Medium Scale',
+      title: 'Beverage Packaging Equipment Installation',
+      location: 'Eldoret, Kenya',
+      capacity: '24,000 BPH',
       year: '2023',
-      image: 'https://images.pexels.com/photos/8728380/pexels-photo-8728380.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'A drought-resilient infrastructure project that helps conserve water while meeting community needs.',
-      highlights: ['Water conservation focus', 'Drought mitigation', 'Community infrastructure support']
+      image: '/site-images/End-of-Line Equipment 1.jpg',
+      description: 'Mechanical installation and commissioning of labelers, fillers, and end‑of‑line wrapping with inline coding and inspection systems.',
+      highlights: ['Labeler & Filler Setup', 'Inline Coding & Inspection', 'Operator Training', 'Performance Validation']
     },
     {
-      title: 'Industrial Water Treatment',
-      location: 'Texas, USA',
-      capacity: 'Medium Scale',
+      title: 'Spare Parts & Upgrade Commissioning',
+      location: 'Mombasa, Kenya',
+      capacity: 'Multi‑Format Changeovers',
       year: '2023',
-      image: 'https://images.pexels.com/photos/9800002/pexels-photo-9800002.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Integrated solution combining our construction expertise with water treatment processes for industrial applications.',
-      highlights: ['Process integration', 'Cost reduction', 'Environmental compliance']
+      image: '/site-images/Spare Parts & Support 1.jpg',
+      description: 'OEM spare parts supply with change‑part upgrades, preventive maintenance kits, and PLC parameter optimization for faster format changes.',
+      highlights: ['OEM Spare Parts', 'Change‑Part Upgrades', 'Preventive Maintenance', 'PLC Optimization']
     }
   ];
 
   const stats = [
-    { icon: Zap, number: '500+', label: 'Major Contracts' },
-    { icon: MapPin, number: '25+', label: 'Locations' },
-    { icon: Calendar, number: '100+', label: 'Projects Completed' },
-    { icon: Award, number: '15+', label: 'Industry Awards' }
+    { icon: Zap, number: '150+', label: 'Lines Deployed' },
+    { icon: MapPin, number: '25+', label: 'Sites Served' },
+    { icon: Calendar, number: '100+', label: 'Installations Completed' },
+    { icon: Award, number: '98%', label: 'Client Satisfaction' }
   ];
 
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-navy to-steel-gray text-white">
+      <section className="py-20 bg-gradient-to-br from-dark to-gray-800 text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl lg:text-6xl font-serif font-bold mb-6">
-            Project Portfolio
+            Packaging Installations & Integrations
           </h1>
           <p className="text-xl lg:text-2xl text-cream/90 leading-relaxed">
-            Showcasing our innovative construction projects 
-            across diverse environments and applications.
+            Selected portfolio of packaging machinery installations, end‑of‑line integrations, and commissioning projects across East Africa.
           </p>
         </div>
       </section>

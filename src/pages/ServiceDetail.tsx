@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, Zap, Shield, Settings, Droplets } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import { ArrowLeft, CheckCircle, Zap, Settings, Droplets } from 'lucide-react';
 import { services, Service } from '../data/services';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Autoplay } from 'swiper/modules';
@@ -7,8 +8,38 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 const ServiceDetail = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const { slug } = useParams<{ slug: string }>();
   const service: Service | undefined = slug ? services.find((s) => s.slug === slug) : undefined;
+
+  // Autoplay/pause subsection videos when entering/leaving viewport
+  useEffect(() => {
+    const root = containerRef.current;
+    if (!root) return;
+    const videos = Array.from(root.querySelectorAll<HTMLVideoElement>('video[data-autoplay="true"]'));
+    if (videos.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            // Try to play when at least 50% visible
+            const p = video.play();
+            if (p && typeof p.catch === 'function') {
+              p.catch(() => {/* ignore autoplay failures */});
+            }
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: [0, 0.5, 1] }
+    );
+
+    videos.forEach((v) => observer.observe(v));
+    return () => observer.disconnect();
+  }, []);
 
   if (!service) {
     return (
@@ -44,7 +75,7 @@ const ServiceDetail = () => {
   const CategoryIcon = getCategoryIcon(service.category);
 
   return (
-    <div className="pt-20">
+    <div ref={containerRef} className="pt-20">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-dark to-gray-800 text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -176,6 +207,59 @@ const ServiceDetail = () => {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Detailed Line Components (with video placeholders) */}
+      {service.details.subSections && service.details.subSections.length > 0 && (
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-4xl font-serif font-bold text-dark mb-10">Line Components & Solutions</h2>
+            <div className="space-y-10">
+              {service.details.subSections.map((sub, idx) => (
+                <div key={idx} className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start bg-light p-8 rounded-2xl shadow-lg">
+                  <div>
+                    <h3 className="text-2xl font-semibold text-dark mb-3">{sub.title}</h3>
+                    <p className="text-gray-700 leading-relaxed mb-6">{sub.description}</p>
+                    {sub.highlights?.length > 0 && (
+                      <ul className="space-y-3">
+                        {sub.highlights.map((h, i) => (
+                          <li key={i} className="flex items-start space-x-3">
+                            <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                            <span className="text-gray-700">{h}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                  <div>
+                    {sub.videoSrc ? (
+                      <video
+                        className="w-full rounded-xl shadow"
+                        controls
+                        muted
+                        playsInline
+                        preload="metadata"
+                        data-autoplay="true"
+                        aria-label={`${sub.title} video`}
+                      >
+                        <source src={sub.videoSrc} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    ) : (
+                      <div className="w-full aspect-video bg-white rounded-xl border border-dashed border-gray-300 flex items-center justify-center text-gray-500">
+                        {sub.videoPlaceholder ? (
+                          <span className="text-sm">10–15 secs video placeholder — add embed here</span>
+                        ) : (
+                          <span className="text-sm">Media placeholder</span>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

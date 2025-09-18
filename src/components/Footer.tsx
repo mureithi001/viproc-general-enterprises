@@ -22,7 +22,7 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4 text-white">Services</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/services/end-of-line-equipment" className="hover:text-primary transition-colors">Equipment Supply</a></li>
+              <li><a href="/services/supply-of-end-of-line-packaging-machines" className="hover:text-primary transition-colors">Equipment Supply</a></li>
               <li><a href="/services/installation-commissioning" className="hover:text-primary transition-colors">Installation</a></li>
               <li><a href="/services/spare-parts-support" className="hover:text-primary transition-colors">Parts & Support</a></li>
               <li><a href="/services/consulting-training" className="hover:text-primary transition-colors">Consulting & Training</a></li>

@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <div className="relative">
       <Hero />
-      
+
       {/* Stats Section */}
       <section className="py-20 bg-light relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -106,6 +106,58 @@ const Home = () => {
               <span>View all</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
+          </div>
+        </div>
+      </section>
+      {/* Packaging Machinery Supply (Main Offering) - moved below Services */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div>
+              <h2 className="text-4xl lg:text-5xl font-serif font-bold text-dark mb-4 lg:mb-6">Packaging Machinery Supply</h2>
+              <p className="text-base lg:text-lg text-gray-600 leading-relaxed mb-6">
+                We supply a wide variety of primary and secondary packaging machinery from leading global manufacturers —
+                backed by local engineering, installation & commissioning, and OEM spare parts.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[ 
+                  { icon: PackageCheck, title: 'Primary & Secondary', text: 'Fillers, labelers, wrappers, and case packing systems.' },
+                  { icon: Wrench,        title: 'Installation',      text: 'Professional installation, commissioning, and training.' },
+                  { icon: Zap,           title: 'End‑of‑Line',       text: 'Case erectors/packers, conveyors, palletizers, shrink tunnels.' },
+                  { icon: Globe,         title: 'Global Brands',     text: 'Sourced from trusted international manufacturers.' },
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start space-x-3 p-4 rounded-xl bg-light">
+                    <div className="inline-flex items-center justify-center w-10 h-10 bg-white rounded-lg ring-1 ring-secondary/20 text-secondary flex-shrink-0">
+                      <item.icon className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-dark">{item.title}</div>
+                      <div className="text-sm text-gray-600">{item.text}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                <Link to="/services" className="inline-flex items-center space-x-2 text-white bg-secondary hover:bg-secondary/90 px-6 py-3 rounded-lg font-semibold transition-colors">
+                  <span>Explore Packaging Services</span>
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link to="/services/supply-of-end-of-line-packaging-machines" className="inline-flex items-center space-x-2 px-6 py-3 rounded-lg font-semibold border-2 border-secondary text-secondary hover:bg-light transition-colors">
+                  <span>Supply of End of Line Packaging Machines</span>
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src="/site-images/End-of-Line Equipment 2.jpg"
+                alt="Packaging machinery supply and end-of-line equipment"
+                className="rounded-2xl shadow-2xl"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-dark/10 to-transparent" />
+            </div>
           </div>
         </div>
       </section>

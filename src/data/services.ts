@@ -10,19 +10,28 @@ export interface Service {
     applications: string[];
     benefits: string[];
     technicalSpecs?: string[];
+    subSections?: {
+      title: string;
+      description: string;
+      highlights: string[];
+      videoPlaceholder?: boolean;
+      videoSrc?: string;
+    }[];
   };
 }
 
 export const services: Service[] = [
   {
-    slug: "end-of-line-equipment",
-    title: "End-of-Line Equipment",
-    description: "Supplying world-class packaging and processing machinery from leading global manufacturers to optimize your production line.",
+    slug: "supply-of-end-of-line-packaging-machines",
+    title: "Supply of End of Line Packaging Machines",
+    description: "Complete end‑of‑line solutions including case erectors/packers, shrink wrappers & tunnels, conveyors, palletizers, and integrated coding & labeling.",
     highlights: [
-      "Sourced from top-tier manufacturers in Italy, India, & China.",
-      "Custom solutions for food & beverage, pharmaceuticals, and more.",
-      "Advanced machinery to boost productivity and ensure quality.",
-      "Equipment tailored to meet your specific operational needs."
+      "Case erectors, case packers, sealers, and palletizers.",
+      "Conveyors, accumulation tables, and sorting systems.",
+      "Shrink wrappers, tunnels, and stretch wrapping systems.",
+      "Coding, labeling, and inline inspection integration.",
+      "HMI/PLC integration with safety interlocks and e‑stops.",
+      "Configured for your SKUs, formats, and throughput targets."
     ],
     images: [
       "/site-images/End-of-Line Equipment 1.jpg",
@@ -30,19 +39,89 @@ export const services: Service[] = [
     ],
     category: "Equipment Solutions",
     details: {
-      overview: "Our core mission is to equip your business with high-performance end-of-line machinery. We partner with global leaders to provide the latest in packaging technology, ensuring your production is efficient, safe, and delivers market-ready products.",
+      overview: "We design and deploy complete end‑of‑line systems tailored to your product mix and performance goals. From case erection and packing to wrapping and palletizing, we integrate every component — with controls, safety, and inspection — to deliver a reliable, high‑throughput finishing area.",
       applications: [
-        "Case Packers & Erectors",
-        "Palletizers & Depalletizers",
-        "Shrink Wrappers & Tunnels",
-        "Conveyor & Sorting Systems",
-        "Industrial Labeling & Coding"
+        "Carton case erection, packing, sealing, and labeling",
+        "Bottle/can crate packing and tray packing",
+        "Shrink wrapping (bundles and cases) with tunnels",
+        "Conveying, accumulation, merging, and sorting",
+        "Palletizing/depalletizing and stretch wrapping",
+        "Inline coding, labeling, and vision/inspection"
       ],
       benefits: [
-        "Accelerate production speed and throughput",
-        "Reduce labor costs and manual handling errors",
-        "Enhance product safety and packaging consistency",
-        "Gain a competitive edge with the latest global technology"
+        "Increase line throughput and overall equipment effectiveness (OEE)",
+        "Reduce manual handling and associated labor costs",
+        "Improve pack quality, consistency, and product safety",
+        "Scalable, modular systems that grow with your demand",
+        "Seamless integration with existing upstream equipment"
+      ],
+      technicalSpecs: [
+        "Throughput: matched to upstream (typ. 30–300+ packs/min)",
+        "Carton formats: American case, RSC, wrap‑around, trays",
+        "Conveyor types: modular belt, roller, chain, mat‑top",
+        "Safety: interlocked guards, e‑stops, SIL‑rated devices",
+        "Controls: PLC/HMI integration, recipe & format management",
+        "Options: print & apply labeling, vision inspection, reject units"
+      ],
+      subSections: [
+        {
+          title: "Linear Weigh Filler (Snacks, Rice, Lentils)",
+          description: "Compact linear weighers designed for granular and particulate products. Optimized hoppers and feeder control ensure consistent accuracy for snacks, cereals, rice, pulses, and lentils.",
+          highlights: [
+            "2–4 head linear weighers for mid‑range speeds",
+            "Recipe memory for quick product changeovers",
+            "Food‑grade contact parts, easy washdown",
+            "Integration with VFFS/HFFS baggers and conveyors"
+          ],
+          videoPlaceholder: true,
+          videoSrc: "/site-images/Linear Weigh Filler.mp4"
+        },
+        {
+          title: "Case Erector Machines (Secondary Packaging)",
+          description: "Automatic case erectors for forming American cases (RSC) and wrap‑around cartons. Ensures square, consistent cases ready for packing and sealing.",
+          highlights: [
+            "High‑reliability vacuum pick and forming",
+            "Hot‑melt or tape sealing options",
+            "Quick changeover between case sizes",
+            "Integration with case packers and sealers"
+          ],
+          videoPlaceholder: true,
+          videoSrc: "/site-images/Case Erector Machines.mp4"
+        },
+        {
+          title: "CAN Filling, Seamer & Shrink Wrap",
+          description: "Integrated lines for CAN filling and seaming, followed by secondary packaging with shrink wrapping for retail or bulk bundles.",
+          highlights: [
+            "Volumetric or flow‑meter filling options",
+            "Seamers compliant with industry standards",
+            "Bundle shrink wrapping with tunnels",
+            "Inline date coding and label application"
+          ],
+          videoPlaceholder: true,
+          videoSrc: "/site-images/CAN Filling.mp4"
+        },
+        {
+          title: "Robopack Case Packing (RGB, PET, Tetra Pak)",
+          description: "Robotic and mechanical case packers for returnable glass bottles (RGB), PET, and Tetra Pak formats. Gentle handling preserves product integrity.",
+          highlights: [
+            "Pick‑and‑place or wrap‑around configurations",
+            "Format parts for multi‑SKU operations",
+            "Ergonomic HMI and fault diagnostics",
+            "Compatible with crate/tray/case layouts"
+          ],
+          videoPlaceholder: true
+        },
+        {
+          title: "Linear Filling (Food & Non‑Food)",
+          description: "Linear piston or gear pump fillers suitable for viscous and free‑flowing products across food, personal care, and household segments.",
+          highlights: [
+            "Multi‑head configurations for higher throughput",
+            "No‑drip/no‑bottle‑no‑fill interlocks",
+            "CIP‑friendly manifolds and valves",
+            "Integration with cappers, labelers, and conveyors"
+          ],
+          videoPlaceholder: true
+        }
       ]
     }
   },
