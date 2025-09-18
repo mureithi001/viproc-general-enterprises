@@ -9,6 +9,13 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
+  const scrollTopSmooth = () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  const handleNavClick = (to: string) => {
+    if (location.pathname === to) {
+      scrollTopSmooth();
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -33,7 +40,7 @@ const Header = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center space-x-3" aria-label="Go to Home">
+          <Link to="/" className="flex items-center space-x-3" aria-label="Go to Home" onClick={() => handleNavClick('/') }>
             <img
               src="/logo/logo 3.jpeg"
               alt="Viproc General Enterprises logo"
@@ -58,6 +65,7 @@ const Header = () => {
                           ? 'text-primary border-b-2 border-primary pb-1' 
                           : 'text-dark'
                       }`}
+                      onClick={() => handleNavClick(item.href)}
                     >
                       {item.name}
                     </Link>
@@ -95,6 +103,7 @@ const Header = () => {
                         ? 'text-primary border-b-2 border-primary pb-1' 
                         : 'text-dark'
                     }`}
+                    onClick={() => handleNavClick(item.href)}
                   >
                     {item.name}
                   </Link>
@@ -108,18 +117,21 @@ const Header = () => {
             <Link
               to="/"
               className="px-3 py-2 text-xs font-semibold rounded-md bg-secondary text-white hover:bg-secondary/90 transition-colors"
+              onClick={() => handleNavClick('/')}
             >
               Home
             </Link>
             <Link
               to="/services"
               className="px-3 py-2 text-xs font-semibold rounded-md bg-white text-secondary border border-secondary/30 hover:bg-light transition-colors"
+              onClick={() => handleNavClick('/services')}
             >
               Services
             </Link>
             <Link
               to="/contact"
               className="px-3 py-2 text-xs font-semibold rounded-md bg-primary text-white hover:bg-primary/90 transition-colors"
+              onClick={() => handleNavClick('/contact')}
             >
               Contact
             </Link>
@@ -160,7 +172,10 @@ const Header = () => {
                         key={service.slug}
                         to={`/services/${service.slug}`}
                         className="block px-4 py-2 text-xs text-gray-600 hover:text-primary transition-colors"
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={() => {
+                          if (location.pathname === `/services/${service.slug}`) scrollTopSmooth();
+                          setIsMenuOpen(false);
+                        }}
                       >
                         {service.title}
                       </Link>
