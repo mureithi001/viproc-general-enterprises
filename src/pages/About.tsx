@@ -18,20 +18,8 @@ const About = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-navy to-steel-gray text-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-5xl lg:text-6xl font-serif font-bold mb-6">
-            About Viproc General Enterprises
-          </h1>
-          <p className="text-xl lg:text-2xl text-cream/90 leading-relaxed">
-            Supplier of packaging machinery, end‑of‑line equipment, OEM spare parts, and professional installation & commissioning.
-          </p>
-        </div>
-      </section>
-
       {/* About Section */}
-      <section className="py-20 bg-white">
+      <section className="pt-4 md:pt-6 pb-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="lg:col-span-1">
