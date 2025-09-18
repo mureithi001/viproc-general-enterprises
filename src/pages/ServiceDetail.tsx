@@ -2,10 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import { ArrowLeft, CheckCircle, Zap, Settings, Droplets } from 'lucide-react';
 import { services, Service } from '../data/services';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, A11y, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
+ 
 
 const ServiceDetail = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -23,7 +20,7 @@ const ServiceDetail = () => {
       (entries) => {
         entries.forEach((entry) => {
           const video = entry.target as HTMLVideoElement;
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.25) {
             // Try to play when at least 50% visible
             const p = video.play();
             if (p && typeof p.catch === 'function') {
@@ -34,7 +31,7 @@ const ServiceDetail = () => {
           }
         });
       },
-      { threshold: [0, 0.5, 1] }
+      { threshold: [0, 0.25, 0.5, 1] }
     );
 
     videos.forEach((v) => observer.observe(v));
@@ -103,34 +100,18 @@ const ServiceDetail = () => {
               </p>
             </div>
             <div className="relative">
-              {service.images.length > 1 ? (
-                <Swiper
-                  modules={[Pagination, A11y, Autoplay]}
-                  pagination={{ clickable: true }}
-                  autoplay={{ delay: 4000, disableOnInteraction: false }}
-                  className="rounded-2xl shadow-2xl"
-                >
-                  {service.images.map((imgSrc: string, i: number) => (
-                    <SwiperSlide key={i}>
-                      <img
-                        src={imgSrc}
-                        alt={`${service.title} ${i + 1}`}
-                        className="rounded-2xl w-full h-full object-cover"
-                        loading={i === 0 ? 'eager' : 'lazy'}
-                        decoding="async"
-                      />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              ) : (
-                <img
-                  src={service.images[0]}
-                  alt={service.title}
-                  className="rounded-2xl shadow-2xl"
-                  loading="eager"
-                  decoding="async"
-                />
-              )}
+              {/* Intro video provided by client */}
+              <video
+                className="rounded-2xl shadow-2xl w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label={`${service.title} introduction video`}
+              >
+                <source src="/site-images/Sup.mp4" type="video/mp4" />
+              </video>
               <div className="absolute inset-0 bg-gradient-to-tr from-dark/20 to-transparent rounded-2xl"></div>
             </div>
           </div>
@@ -157,10 +138,86 @@ const ServiceDetail = () => {
               ))}
             </div>
           </div>
+
+          
         </div>
       </section>
 
-      {/* Applications & Benefits */}
+      {/* Detailed Line Components (videos) moved directly after Overview */}
+      {service.details.subSections && service.details.subSections.length > 0 && (
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-4xl font-serif font-bold text-dark mb-10">Line Components & Solutions</h2>
+            <div className="space-y-10">
+              {service.details.subSections.map((sub, idx) => {
+                const id = sub.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+                const mediaFirst = idx % 2 === 1; // alternate layout
+                return (
+                <div id={id} key={idx} className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start bg-light p-8 rounded-2xl shadow-lg scroll-mt-28">
+                  {!mediaFirst && (
+                  <div>
+                    <h3 className="text-2xl font-semibold text-dark mb-3">{sub.title}</h3>
+                    <p className="text-gray-700 leading-relaxed mb-6">{sub.description}</p>
+                    {sub.highlights?.length > 0 && (
+                      <ul className="space-y-3">
+                        {sub.highlights.map((h, i) => (
+                          <li key={i} className="flex items-start space-x-3">
+                            <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                            <span className="text-gray-700">{h}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                  )}
+                  <div className={mediaFirst ? '' : ''}>
+                    {sub.videoSrc ? (
+                      <video
+                        className="w-full rounded-xl shadow"
+                        controls
+                        muted
+                        playsInline
+                        preload="metadata"
+                        data-autoplay="true"
+                        aria-label={`${sub.title} video`}
+                      >
+                        <source src={sub.videoSrc} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    ) : (
+                      <div className="w-full aspect-video bg-white rounded-xl border border-dashed border-gray-300 flex items-center justify-center text-gray-500">
+                        {sub.videoPlaceholder ? (
+                          <span className="text-sm">10–15 secs video placeholder — add embed here</span>
+                        ) : (
+                          <span className="text-sm">Media placeholder</span>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                  {mediaFirst && (
+                  <div>
+                    <h3 className="text-2xl font-semibold text-dark mb-3">{sub.title}</h3>
+                    <p className="text-gray-700 leading-relaxed mb-6">{sub.description}</p>
+                    {sub.highlights?.length > 0 && (
+                      <ul className="space-y-3">
+                        {sub.highlights.map((h, i) => (
+                          <li key={i} className="flex items-start space-x-3">
+                            <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                            <span className="text-gray-700">{h}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                  )}
+                </div>
+              );})}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Applications & Benefits (now after videos for better flow) */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -212,58 +269,16 @@ const ServiceDetail = () => {
         </section>
       )}
 
-      {/* Detailed Line Components (with video placeholders) */}
-      {service.details.subSections && service.details.subSections.length > 0 && (
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <h2 className="text-4xl font-serif font-bold text-dark mb-10">Line Components & Solutions</h2>
-            <div className="space-y-10">
-              {service.details.subSections.map((sub, idx) => (
-                <div key={idx} className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start bg-light p-8 rounded-2xl shadow-lg">
-                  <div>
-                    <h3 className="text-2xl font-semibold text-dark mb-3">{sub.title}</h3>
-                    <p className="text-gray-700 leading-relaxed mb-6">{sub.description}</p>
-                    {sub.highlights?.length > 0 && (
-                      <ul className="space-y-3">
-                        {sub.highlights.map((h, i) => (
-                          <li key={i} className="flex items-start space-x-3">
-                            <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-700">{h}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                  <div>
-                    {sub.videoSrc ? (
-                      <video
-                        className="w-full rounded-xl shadow"
-                        controls
-                        muted
-                        playsInline
-                        preload="metadata"
-                        data-autoplay="true"
-                        aria-label={`${sub.title} video`}
-                      >
-                        <source src={sub.videoSrc} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                    ) : (
-                      <div className="w-full aspect-video bg-white rounded-xl border border-dashed border-gray-300 flex items-center justify-center text-gray-500">
-                        {sub.videoPlaceholder ? (
-                          <span className="text-sm">10–15 secs video placeholder — add embed here</span>
-                        ) : (
-                          <span className="text-sm">Media placeholder</span>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Mid-page CTA */}
+      <section className="py-16 bg-primary/5">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h3 className="text-3xl font-serif font-bold text-dark mb-4">Discuss Your End‑of‑Line Requirements</h3>
+          <p className="text-gray-700 mb-6">Our engineers will help you define formats, throughputs, and integration points to ensure a reliable, scalable solution.</p>
+          <Link to="/contact" className="inline-flex items-center px-6 py-3 rounded-lg bg-primary text-white font-semibold hover:bg-primary/90 transition-colors">
+            Request a Consultation
+          </Link>
+        </div>
+      </section>
 
       {/* Call to Action */}
       <section className="py-20 bg-dark text-white">
@@ -288,6 +303,36 @@ const ServiceDetail = () => {
             >
               <span>Back to Services</span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <h3 className="text-3xl font-serif font-bold text-dark mb-6">Frequently Asked Questions</h3>
+          <div className="divide-y divide-gray-200 bg-light rounded-2xl">
+            <details className="p-6 group" open>
+              <summary className="cursor-pointer font-semibold text-dark flex justify-between items-center">
+                What information do you need to quote an end‑of‑line system?
+                <span className="text-primary group-open:rotate-180 transition-transform">▾</span>
+              </summary>
+              <p className="mt-3 text-gray-700">Typical inputs include product types/SKUs, pack formats, target speeds (units/min), available footprint/layout, utilities, and integration points with upstream equipment. We’ll help you capture this during discovery.</p>
+            </details>
+            <details className="p-6 group">
+              <summary className="cursor-pointer font-semibold text-dark flex justify-between items-center">
+                Can you integrate with our existing machines and controls?
+                <span className="text-primary group-open:rotate-180 transition-transform">▾</span>
+              </summary>
+              <p className="mt-3 text-gray-700">Yes. We integrate with a wide range of OEMs and controls platforms, aligning HMIs, safety interlocks, and recipe/format management for a seamless operator experience.</p>
+            </details>
+            <details className="p-6 group">
+              <summary className="cursor-pointer font-semibold text-dark flex justify-between items-center">
+                Do you provide installation, commissioning, and training?
+                <span className="text-primary group-open:rotate-180 transition-transform">▾</span>
+              </summary>
+              <p className="mt-3 text-gray-700">Absolutely. Our certified technicians handle installation and commissioning, followed by operator and maintenance training and access to OEM spares.</p>
+            </details>
           </div>
         </div>
       </section>

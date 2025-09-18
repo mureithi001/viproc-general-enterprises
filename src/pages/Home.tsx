@@ -149,13 +149,18 @@ const Home = () => {
               </div>
             </div>
             <div className="relative">
-              <img
-                src="/site-images/End-of-Line Equipment 2.jpg"
-                alt="Packaging machinery supply and end-of-line equipment"
-                className="rounded-2xl shadow-2xl"
-                loading="lazy"
-                decoding="async"
-              />
+              <video
+                className="rounded-2xl shadow-2xl w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Packaging machinery supply showcase"
+              >
+                <source src="/site-images/Sup.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-dark/10 to-transparent" />
             </div>
           </div>
