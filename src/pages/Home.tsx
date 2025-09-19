@@ -2,6 +2,7 @@ import Hero from '../components/Hero';
 import { ArrowRight, Award, Users, Zap, PackageCheck, Globe, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { services, type Service } from '../data/services';
+import { projects } from '../data/projects';
 
 const Home = () => {
   const stats = [
@@ -125,92 +126,39 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Nyanza Bottlers Project */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gray-200 relative">
-                <img
-                  src="/project-images/Nyanza Bottlers 1.jpeg"
-                  alt="Nyanza Bottlers Electrical Audit"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent" />
-                <div className="absolute bottom-0 left-0 p-6 text-white">
-                  <h3 className="text-xl font-semibold">Nyanza Bottlers</h3>
-                  <p className="text-sm opacity-90">Mwanza, Tanzania</p>
+            {projects.slice(0, 3).map((project) => (
+              <div key={project.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-48 bg-gray-200 relative">
+                  <img
+                    src={project.images[0]}
+                    alt={`${project.title} - Featured`}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback to a placeholder if image fails to load
+                      e.currentTarget.src = '/placeholder-project.jpg';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-6 text-white">
+                    <h3 className="text-xl font-semibold">{project.title.split(' - ')[0]}</h3>
+                    <p className="text-sm opacity-90">{project.location}</p>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-lg font-semibold text-dark mb-2">{project.title.split(' - ')[1] || project.title}</h4>
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                    {project.description}
+                  </p>
+                  <Link 
+                    to="/projects" 
+                    className="inline-flex items-center text-secondary hover:text-secondary/80 font-medium text-sm"
+                  >
+                    View project details
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
                 </div>
               </div>
-              <div className="p-6">
-                <h4 className="text-lg font-semibold text-dark mb-2">Krones Line Electrical Audit</h4>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                  Comprehensive electrical audit of Krones production line, identifying potential improvements for energy efficiency and system reliability.
-                </p>
-                <Link 
-                  to="/projects" 
-                  className="inline-flex items-center text-secondary hover:text-secondary/80 font-medium text-sm"
-                >
-                  View project details
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Ekaterra Project */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gray-200 relative">
-                <img
-                  src="/project-images/Ekaterra UAE 1.jpeg"
-                  alt="Ekaterra Central Palletizing System"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent" />
-                <div className="absolute bottom-0 left-0 p-6 text-white">
-                  <h3 className="text-xl font-semibold">Ekaterra</h3>
-                  <p className="text-sm opacity-90">UAE</p>
-                </div>
-              </div>
-              <div className="p-6">
-                <h4 className="text-lg font-semibold text-dark mb-2">Central Palletizing System</h4>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                  Annual Maintenance Contract intervention ensuring optimal performance and minimal downtime for the central palletizing system.
-                </p>
-                <Link 
-                  to="/projects" 
-                  className="inline-flex items-center text-secondary hover:text-secondary/80 font-medium text-sm"
-                >
-                  View project details
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Azania Distillers Project */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gray-200 relative">
-                <img
-                  src="/project-images/Azania Distillers 1.jpeg"
-                  alt="Azania Distillers Liquor Line"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent" />
-                <div className="absolute bottom-0 left-0 p-6 text-white">
-                  <h3 className="text-xl font-semibold">Azania Distillers</h3>
-                  <p className="text-sm opacity-90">Moshi, Tanzania</p>
-                </div>
-              </div>
-              <div className="p-6">
-                <h4 className="text-lg font-semibold text-dark mb-2">Liquor Line Installation</h4>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                  Complete installation and commissioning of a liquor production line, including equipment setup and operator training.
-                </p>
-                <Link 
-                  to="/projects" 
-                  className="inline-flex items-center text-secondary hover:text-secondary/80 font-medium text-sm"
-                >
-                  View project details
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className="mt-12 text-center sm:hidden">
