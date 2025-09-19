@@ -2,18 +2,33 @@ import { CheckCircle } from 'lucide-react';
 
 const Clients = () => {
   const clients = [
-    { name: 'Tononoka Steels Ltd', logo: '/site-images/Tononoka Steels Ltd.jpg' },
+    // First 6 clients (same as home page)
+    { name: 'Unilever', logo: '/site-images/Unilever.jpg' },
+    { name: 'Trufoods', logo: '/site-images/Trufoods Limited.jpg' },
+    { name: 'Bidco Africa', logo: '/site-images/Bidco Africa.jpeg' },
     { name: 'Impala Glass Industries Ltd', logo: '/site-images/Impala Glass Industries Ltd.jpg' },
-    { name: 'Botachem Limited', logo: '/site-images/Botachem Limited.jpg' },
+    { name: 'Tononoka Steels Ltd', logo: '/site-images/Tononoka Steels Ltd.jpg' },
+    { name: 'Vectus Kenya Ltd', logo: '/site-images/Vectus Kenya Ltd.jpg' },
+    
+    // Remaining clients
     { name: 'Styroplast Limited', logo: '/site-images/Styroplast Limited.jpg' },
     { name: 'Printwell Industries Ltd', logo: '/site-images/Printwell Industries Ltd.jpg' },
-    { name: 'Vectus Kenya Ltd', logo: '/site-images/Vectus Kenya Ltd.jpg' },
-    { name: 'Elkeiyo Dairy', logo: '/site-images/Elkeiyo Dairy.jpg' },
-    { name: 'Two Cousins Distillers', logo: '/site-images/Two Cousins Distillers.jpg' },
-    { name: 'Trufoods Limited', logo: '/site-images/Trufoods Limited.jpg' },
     { name: 'Targeter Educational Publishers', logo: '/site-images/Targeter Educational Publishers.jpg' },
-    { name: 'Synkron International Ltd', logo: null },
-    { name: 'Rift valley brewing company', logo: '/site-images/Rift valley brewing company.jpg' },
+    { name: 'Rift Valley Brewing Company', logo: '/site-images/Rift valley brewing company.jpg' },
+    { name: 'Two Cousins Distillers', logo: '/site-images/Two Cousins Distillers.jpeg' },
+    { name: 'Fresh Life', logo: '/site-images/Fresh Life.jpg' },
+    { name: 'Abyssinia Steels', logo: '/site-images/Abyssinia Steels.jpg' },
+    { name: 'Elkeiyo Dairy', logo: '/site-images/Elkeiyo Dairy.jpg' },
+    { name: 'Botachem Limited', logo: '/project-images/Botachem Limited.jpg' },
+    { name: 'Atlantis Life Science', logo: '/site-images/Atlantis Life Science.jpg' },
+    { name: 'Alpha Clean Foods', logo: '/site-images/Alpha Clean Foods.jpeg' },
+    { name: 'Azania Distillers', logo: '/site-images/Azania Distillers.jpg' },
+    { name: 'Rubber Products Ltd', logo: '/site-images/Rubber Products Ltd.jpg' },
+    { name: 'Fedo Agencies Ltd', logo: '/site-images/Fedo Agencies Ltd.jpg' },
+    { name: 'LSHS', logo: '/site-images/LSHS.jpeg' },
+    { name: 'Dawa Limited', logo: '/site-images/Dawa Limited.jpeg' },
+    { name: 'Sub Saharan Eca Industries', logo: '/site-images/Sub Saharan Eca Industries.jpeg' },
+    { name: 'B Braun Kenya Ltd', logo: '/site-images/B Braun Kenya Ltd.jpg' },
   ];
 
   const whyChooseViproc = [

@@ -12,14 +12,14 @@ const Home = () => {
   ];
 
   const clients = [
-    { name: 'Tononoka Steels Ltd', logo: '/site-images/Tononoka Steels Ltd.jpg' },
+    { name: 'Unilever', logo: '/site-images/Unilever.jpg' },
+    { name: 'Trufoods', logo: '/site-images/Trufoods Limited.jpg' },
+    { name: 'Bidco Africa', logo: '/site-images/Bidco Africa.jpeg' },
     { name: 'Impala Glass Industries Ltd', logo: '/site-images/Impala Glass Industries Ltd.jpg' },
-    { name: 'Botachem Limited', logo: '/site-images/Botachem Limited.jpg' },
+    { name: 'Tononoka Steels Ltd', logo: '/site-images/Tononoka Steels Ltd.jpg' },
+    { name: 'Vectus Kenya Ltd', logo: '/site-images/Vectus Kenya Ltd.jpg' },
     { name: 'Styroplast Limited', logo: '/site-images/Styroplast Limited.jpg' },
     { name: 'Printwell Industries Ltd', logo: '/site-images/Printwell Industries Ltd.jpg' },
-    { name: 'Vectus Kenya Ltd', logo: '/site-images/Vectus Kenya Ltd.jpg' },
-    { name: 'Elkeiyo Dairy', logo: '/site-images/Elkeiyo Dairy.jpg' },
-    { name: 'Two Cousins Distillers', logo: '/site-images/Two Cousins Distillers.jpg' },
   ];
 
   return (
