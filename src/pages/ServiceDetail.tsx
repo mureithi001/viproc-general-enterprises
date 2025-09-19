@@ -132,19 +132,54 @@ const ServiceDetail = () => {
               </p>
             </div>
             <div className="relative">
-              {/* Intro video provided by client */}
-              <video
-                className="rounded-2xl shadow-2xl w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                aria-label={`${service.title} introduction video`}
-              >
-                <source src={service.slug === 'instrumentation-automation' ? "/services-videos/instrumentation.mp4" : "/services-videos/Sup.mp4"} type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-tr from-dark/20 to-transparent rounded-2xl"></div>
+              {service.slug === 'spare-parts-support' ? (
+                <>
+                  <img
+                    src="/site-images/Spare Parts & Support 1.jpg"
+                    alt="Spare Parts & Support"
+                    className="rounded-2xl shadow-2xl w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-dark/20 to-transparent rounded-2xl"></div>
+                </>
+              ) : service.slug === 'consulting-training' ? (
+                <>
+                  <img
+                    src="/site-images/Consulting & Training.jpg"
+                    alt="Consulting & Training"
+                    className="rounded-2xl shadow-2xl w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-dark/20 to-transparent rounded-2xl"></div>
+                </>
+              ) : service.slug === 'instrumentation-automation' ? (
+                <video
+                  className="rounded-2xl shadow-2xl w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label={`${service.title} introduction video`}
+                >
+                  <source src="/services-videos/instrumentation.mp4" type="video/mp4" />
+                </video>
+              ) : (
+                <video
+                  className="rounded-2xl shadow-2xl w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label={`${service.title} introduction video`}
+                >
+                  <source src="/services-videos/Sup.mp4" type="video/mp4" />
+                </video>
+              )}
+              {!['spare-parts-support', 'consulting-training'].includes(service.slug) && (
+                <div className="absolute inset-0 bg-gradient-to-tr from-dark/20 to-transparent rounded-2xl"></div>
+              )}
             </div>
           </div>
         </div>
