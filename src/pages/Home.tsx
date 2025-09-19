@@ -109,6 +109,119 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Projects Preview */}
+      <section className="py-16 sm:py-20 bg-light">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-12">
+            <div>
+              <h2 className="text-4xl font-serif font-bold text-dark">Featured Projects</h2>
+              <p className="text-gray-600 mt-2">Explore our successful installations and innovative solutions across industries.</p>
+            </div>
+            <Link to="/projects" className="hidden sm:inline-flex items-center space-x-2 text-dark hover:text-dark/80 font-semibold">
+              <span>View all projects</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Nyanza Bottlers Project */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="h-48 bg-gray-200 relative">
+                <img
+                  src="/site-images/Spare Parts & Support 1.jpg"
+                  alt="Nyanza Bottlers Electrical Audit"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-6 text-white">
+                  <h3 className="text-xl font-semibold">Nyanza Bottlers</h3>
+                  <p className="text-sm opacity-90">Mwanza, Tanzania</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <h4 className="text-lg font-semibold text-dark mb-2">Krones Line Electrical Audit</h4>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  Comprehensive electrical audit of Krones production line, identifying potential improvements for energy efficiency and system reliability.
+                </p>
+                <Link 
+                  to="/projects" 
+                  className="inline-flex items-center text-secondary hover:text-secondary/80 font-medium text-sm"
+                >
+                  View project details
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Ekaterra Project */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="h-48 bg-gray-200 relative">
+                <img
+                  src="/site-images/End-of-Line Equipment 1.jpg"
+                  alt="Ekaterra Central Palletizing System"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-6 text-white">
+                  <h3 className="text-xl font-semibold">Ekaterra</h3>
+                  <p className="text-sm opacity-90">UAE</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <h4 className="text-lg font-semibold text-dark mb-2">Central Palletizing System</h4>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  Annual Maintenance Contract intervention ensuring optimal performance and minimal downtime for the central palletizing system.
+                </p>
+                <Link 
+                  to="/projects" 
+                  className="inline-flex items-center text-secondary hover:text-secondary/80 font-medium text-sm"
+                >
+                  View project details
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Azania Distillers Project */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="h-48 bg-gray-200 relative">
+                <img
+                  src="/site-images/Innovative Solutions for Modern Production.jpg"
+                  alt="Azania Distillers Liquor Line"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-6 text-white">
+                  <h3 className="text-xl font-semibold">Azania Distillers</h3>
+                  <p className="text-sm opacity-90">Moshi, Tanzania</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <h4 className="text-lg font-semibold text-dark mb-2">Liquor Line Installation</h4>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  Complete installation and commissioning of a liquor production line, including equipment setup and operator training.
+                </p>
+                <Link 
+                  to="/projects" 
+                  className="inline-flex items-center text-secondary hover:text-secondary/80 font-medium text-sm"
+                >
+                  View project details
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center sm:hidden">
+            <Link to="/projects" className="inline-flex items-center space-x-2 text-dark hover:text-dark/80 font-semibold">
+              <span>View all projects</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Packaging Machinery Supply (Main Offering) - moved below Services */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
