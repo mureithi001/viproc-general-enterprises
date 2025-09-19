@@ -129,7 +129,7 @@ const Home = () => {
             <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="h-48 bg-gray-200 relative">
                 <img
-                  src="/site-images/Nyanza Bottlers 1.jpeg"
+                  src="/project-images/Nyanza Bottlers 1.jpeg"
                   alt="Nyanza Bottlers Electrical Audit"
                   className="w-full h-full object-cover"
                 />
@@ -158,7 +158,7 @@ const Home = () => {
             <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="h-48 bg-gray-200 relative">
                 <img
-                  src="/site-images/Ekaterra UAE 1.jpeg"
+                  src="/project-images/Ekaterra UAE 1.jpeg"
                   alt="Ekaterra Central Palletizing System"
                   className="w-full h-full object-cover"
                 />
@@ -187,7 +187,7 @@ const Home = () => {
             <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="h-48 bg-gray-200 relative">
                 <img
-                  src="/site-images/Azania Distillers 1.jpeg"
+                  src="/project-images/Azania Distillers 1.jpeg"
                   alt="Azania Distillers Liquor Line"
                   className="w-full h-full object-cover"
                 />
