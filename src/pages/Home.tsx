@@ -271,7 +271,7 @@ const Home = () => {
                 preload="metadata"
                 aria-label="Packaging machinery supply showcase"
               >
-                <source src="/site-images/Sup.mp4" type="video/mp4" />
+                <source src="/services-videos/Sup.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-dark/10 to-transparent" />

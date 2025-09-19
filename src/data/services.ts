@@ -76,7 +76,7 @@ export const services: Service[] = [
             "Integration with VFFS/HFFS baggers and conveyors"
           ],
           videoPlaceholder: true,
-          videoSrc: "/site-images/Linear Weigh Filler.mp4"
+          videoSrc: "/services-videos/Linear Weigh Filler.mp4"
         },
         {
           title: "Case Erector Machines (Secondary Packaging)",
@@ -88,7 +88,7 @@ export const services: Service[] = [
             "Integration with case packers and sealers"
           ],
           videoPlaceholder: true,
-          videoSrc: "/site-images/Case Erector Machines.mp4"
+          videoSrc: "/services-videos/Case Erector Machines.mp4"
         },
         {
           title: "CAN Filling, Seamer & Shrink Wrap",
@@ -100,7 +100,7 @@ export const services: Service[] = [
             "Inline date coding and label application"
           ],
           videoPlaceholder: true,
-          videoSrc: "/site-images/CAN Filling.mp4"
+          videoSrc: "/services-videos/CAN Filling.mp4"
         },
         {
           title: "Robopack Case Packing (RGB, PET, Tetra Pak)",
@@ -112,7 +112,7 @@ export const services: Service[] = [
             "Compatible with crate/tray/case layouts"
           ],
           videoPlaceholder: true,
-          videoSrc: "/site-images/Robopack Case Packing.mp4"
+          videoSrc: "/services-videos/Robopack Case Packing.mp4"
         },
         {
           title: "Linear Filling (Food & Non‑Food)",
@@ -124,7 +124,7 @@ export const services: Service[] = [
             "Precision dosing with load cells or flow meters"
           ],
           videoPlaceholder: true,
-          videoSrc: "/site-images/Linear%20Filling%20(Food%20&%20Non%E2%80%91Food).mp4"
+          videoSrc: "/services-videos/Linear Filling (Food & Non‑Food).mp4"
         }
       ]
     }
@@ -339,7 +339,7 @@ export const services: Service[] = [
             "Integration with VFFS/HFFS baggers and conveyors"
           ],
           videoPlaceholder: true,
-          videoSrc: "/site-images/Linear Weigh Filler.mp4"
+          videoSrc: "/services-videos/Linear Weigh Filler.mp4"
         },
         {
           title: "Case Erector Machines (Secondary Packaging)",
@@ -351,7 +351,7 @@ export const services: Service[] = [
             "Integration with case packers and sealers"
           ],
           videoPlaceholder: true,
-          videoSrc: "/site-images/Case Erector Machines.mp4"
+          videoSrc: "/services-videos/Case Erector Machines.mp4"
         },
         {
           title: "CAN Filling, Seamer & Shrink Wrap",
@@ -363,7 +363,7 @@ export const services: Service[] = [
             "Inline date coding and label application"
           ],
           videoPlaceholder: true,
-          videoSrc: "/site-images/CAN Filling.mp4"
+          videoSrc: "/services-videos/CAN Filling.mp4"
         },
         {
           title: "Robopack Case Packing (RGB, PET, Tetra Pak)",
@@ -375,7 +375,7 @@ export const services: Service[] = [
             "Compatible with crate/tray/case layouts"
           ],
           videoPlaceholder: true,
-          videoSrc: "/site-images/Robopack Case Packing.mp4"
+          videoSrc: "/services-videos/Robopack Case Packing.mp4"
         },
         {
           title: "Linear Filling (Food & Non‑Food)",

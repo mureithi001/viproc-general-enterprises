@@ -142,7 +142,7 @@ const ServiceDetail = () => {
                 preload="metadata"
                 aria-label={`${service.title} introduction video`}
               >
-                <source src={service.slug === 'instrumentation-automation' ? "/site-images/instrumentation.mp4" : "/site-images/Sup.mp4"} type="video/mp4" />
+                <source src={service.slug === 'instrumentation-automation' ? "/services-videos/instrumentation.mp4" : "/services-videos/Sup.mp4"} type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-tr from-dark/20 to-transparent rounded-2xl"></div>
             </div>
