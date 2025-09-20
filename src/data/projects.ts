@@ -29,9 +29,11 @@ export const projects: Project[] = [
       '/project-images/BigTree Beverages Ltd 2.jpeg',
       '/project-images/BigTree Beverages Ltd 3.jpeg',
       '/project-images/BigTree Beverages Ltd 4.jpeg',
-      '/project-images/BigTree Beverages Ltd 5.jpeg'
+      '/project-images/BigTree Beverages Ltd 5.jpeg',
+      '/project-images/BigTree Beverages Ltd 6.jpeg',
+      '/project-images/BigTree Beverages Ltd 7.jpeg'
     ],
-    additionalDetails: 'The Preform Tipper Machine was specifically designed to handle the high-volume requirements of BigTree Beverages Ltd, ensuring minimal downtime and maximum efficiency in their production line. Our team provided end-to-end support from installation to operator training.'
+    additionalDetails: 'The Preform Tipper Machine was specifically designed to handle the high-volume requirements of BigTree Beverages Ltd, ensuring minimal downtime and maximum efficiency in their production line. Our team provided end-to-end support from installation to commissioning.'
   },
   {
     id: 'botachem-limited',
@@ -48,11 +50,12 @@ export const projects: Project[] = [
       'End-to-End Commissioning'
     ],
     images: [
+      '/project-images/Botachem Limited 3.jpeg', // Best quality image showing the equipment
       '/project-images/Botachem Limited 1.jpeg',
       '/project-images/Botachem Limited 2.jpeg',
-      '/project-images/Botachem Limited 3.jpeg',
       '/project-images/Botachem Limited 4.jpeg',
-      '/project-images/Botachem Limited 5.jpeg'
+      '/project-images/Botachem Limited 5.jpeg',
+      '/project-images/Botachem Limited.jpg'
     ],
     additionalDetails: 'The system was specifically configured to handle the unique requirements of agrochemical products, ensuring accurate filling and sealing while maintaining product integrity.'
   },
