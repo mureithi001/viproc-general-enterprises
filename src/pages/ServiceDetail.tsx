@@ -259,26 +259,29 @@ const ServiceDetail = () => {
                         loading="lazy"
                       />
                     ) : (sub as SubSection).images ? (
-                      <div className="relative w-full h-64 overflow-hidden rounded-xl">
+                      <div className="relative w-full overflow-hidden rounded-xl" style={{ aspectRatio: '16/9' }}>
                         {(sub as SubSection).images?.map((img: string, idx: number) => (
                           <img 
                             key={idx}
                             src={img} 
                             alt={`${sub.title} ${idx + 1}`}
-                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${currentSlide === idx ? 'opacity-100' : 'opacity-0'}`}
+                            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${currentSlide === idx ? 'opacity-100' : 'opacity-0'}`}
                             loading="lazy"
+                            style={{ backgroundColor: '#f8f9fa' }}
                           />
                         ))}
-                        <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
-                          {(sub as SubSection).images?.map((_: string, idx: number) => (
-                            <button
-                              key={idx}
-                              onClick={() => setCurrentSlide(idx)}
-                              className={`w-3 h-3 rounded-full ${currentSlide === idx ? 'bg-primary' : 'bg-white/50'}`}
-                              aria-label={`Go to slide ${idx + 1}`}
-                            />
-                          ))}
-                        </div>
+                        {(sub as SubSection).images && (sub as SubSection).images!.length > 1 && (
+                          <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+                            {(sub as SubSection).images?.map((_: string, idx: number) => (
+                              <button
+                                key={idx}
+                                onClick={() => setCurrentSlide(idx)}
+                                className={`w-3 h-3 rounded-full ${currentSlide === idx ? 'bg-primary' : 'bg-white/50'}`}
+                                aria-label={`Go to slide ${idx + 1}`}
+                              />
+                            ))}
+                          </div>
+                        )}
                       </div>
                     ) : (
                       <div className="w-full aspect-video bg-white rounded-xl border border-dashed border-gray-300 flex items-center justify-center text-gray-500">

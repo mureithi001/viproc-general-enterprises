@@ -125,6 +125,20 @@ export const services: Service[] = [
           ],
           videoPlaceholder: true,
           videoSrc: "/services-videos/Linear Filling (Food & Non‑Food).mp4"
+        },
+        {
+          title: "BULK FILLING BAGGING MACHINES",
+          description: "Automatic and semi-automatic bagging solutions for bulk products with pick-fill-thread-sewing technology. Ideal for various food and non-food applications.",
+          highlights: [
+            "Automatic & Semi Automatic operation",
+            "Formats: 10kg - 25kg - 50kg",
+            "Speeds: 10kg (1500 bags/hour), 25kg (1200 bags/hour), 50kg (700 bags/hour)",
+            "Ideal for: Sugar, Rice, Coffee, Tea, Fertilizers, Animal feeds, Milk powder, Snacks, Detergents, Spices, Lentils"
+          ],
+          images: [
+            "/site-images/BULK FILLING BAGGING MACHINE 1.jpeg",
+            "/site-images/BULK FILLING BAGGING MACHINE 2.jpeg"
+          ]
         }
       ]
     }
