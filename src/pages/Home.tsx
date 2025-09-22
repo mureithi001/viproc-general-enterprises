@@ -6,9 +6,9 @@ import { projects } from '../data/projects';
 
 const Home = () => {
   const stats = [
-    { icon: Zap, number: '150+', label: 'Projects Delivered', description: 'Successfully completed projects worldwide' },
+    { icon: Zap, number: '50+', label: 'Projects Delivered', description: 'Successfully completed projects worldwide' },
     { icon: Award, number: '98%', label: 'Client Satisfaction', description: 'Committed to exceeding client expectations' },
-    { icon: Users, number: '20+', label: 'Years of Experience', description: 'Decades of industry-leading expertise' },
+    { icon: Users, number: '7+', label: 'Years of Experience', description: 'Proven track record of excellence' },
   ];
 
   const clients = [

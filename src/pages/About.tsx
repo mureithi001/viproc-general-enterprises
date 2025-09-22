@@ -44,7 +44,7 @@ const About = () => {
                   At VIPROC General Enterprises, we supply a wide variety of packaging and processing machinery from leading global manufacturers. We focus on the points where quality, safety, and brand identity come together — delivering integrated solutions that empower businesses to compete at the highest level.
                 </p>
                 <p>
-                  With over 7 years of experience across East Africa, our core strengths include end‑of‑line equipment, machine installations and commissioning, OEM spare parts, and integrated packaging systems. We also provide consulting and training so your team can operate and maintain equipment efficiently and safely.
+                  With over 7 years of experience across East Africa and beyond, our core strengths include end‑of‑line equipment, machine installations and commissioning, OEM spare parts, and integrated packaging systems. We also provide consulting and training so your team can operate and maintain equipment efficiently and safely.
                 </p>
               </div>
             </div>

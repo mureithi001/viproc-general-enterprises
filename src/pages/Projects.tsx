@@ -167,9 +167,9 @@ const ProjectCard = ({ project }: { project: Project }) => (
 
 const Projects = () => {
   const stats: StatItem[] = [
-    { icon: Zap, number: '150+', label: 'Lines Deployed' },
+    { icon: Zap, number: '50+', label: 'Lines Deployed' },
     { icon: MapPin, number: '25+', label: 'Sites Served' },
-    { icon: Calendar, number: '100+', label: 'Installations Completed' },
+    { icon: Calendar, number: '50+', label: 'Installations Completed' },
     { icon: Award, number: '98%', label: 'Client Satisfaction' }
   ];
 
@@ -182,7 +182,7 @@ const Projects = () => {
             Packaging Installations & Integrations
           </h1>
           <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">
-            Selected portfolio of packaging machinery installations, end‑of‑line integrations, and commissioning projects across East Africa.
+            Selected portfolio of packaging machinery installations, end‑of‑line integrations, and commissioning projects across East Africa & beyond.
           </p>
         </div>
       </section>
