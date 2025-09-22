@@ -36,28 +36,29 @@ export const projects: Project[] = [
     additionalDetails: 'The Preform Tipper Machine was specifically designed to handle the high-volume requirements of BigTree Beverages Ltd, ensuring minimal downtime and maximum efficiency in their production line. Our team provided end-to-end support from installation to commissioning.'
   },
   {
-    id: 'botachem-limited',
-    title: 'Botachem Limited - Linear Filler Equipment',
-    location: 'Nairobi, Kenya',
-    year: '2023',
-    capacity: '6 SKU Capacity',
-    description: 'Installation and commissioning of linear filler equipment for agrochemical products, designed to handle multiple SKUs with precision and efficiency.',
+    id: 'azania-distillers',
+    title: 'Azania Distillers - Liquor Line Installation',
+    location: 'Moshi, Tanzania',
+    year: '2024',
+    capacity: 'Full Production Line',
+    description: 'Complete installation and commissioning of a state-of-the-art liquor production line, including equipment setup, process optimization, and operator training.',
     highlights: [
-      'Linear Filler Equipment',
-      'Agrochemical Application',
-      '6 SKU Configuration',
-      'Precision Filling Technology',
-      'End-to-End Commissioning'
+      'Liquor Production Line Installation',
+      'Full Commissioning',
+      'Process Optimization',
+      'Quality Control Integration',
+      'Operator Training'
     ],
     images: [
-      '/project-images/Botachem Limited 3.jpeg', // Best quality image showing the equipment
-      '/project-images/Botachem Limited 1.jpeg',
-      '/project-images/Botachem Limited 2.jpeg',
-      '/project-images/Botachem Limited 4.jpeg',
-      '/project-images/Botachem Limited 5.jpeg',
-      '/project-images/Botachem Limited.jpg'
+      '/project-images/Azania Distillers 1.jpeg',
+      '/project-images/Azania Distillers  2.jpeg',
+      '/project-images/Azania Distillers  3.jpeg',
+      '/project-images/Azania Distillers 4.jpeg',
+      '/project-images/Azania Distillers 5.jpeg',
+      '/project-images/Azania Distillers 6.jpeg',
+      '/project-images/Azania Distillers 7.jpeg'
     ],
-    additionalDetails: 'The system was specifically configured to handle the unique requirements of agrochemical products, ensuring accurate filling and sealing while maintaining product integrity.'
+    additionalDetails: 'The project involved the installation of a complete liquor production line, including fermentation, distillation, and bottling equipment, with a focus on efficiency, quality control, and compliance with industry standards.'
   },
   {
     id: 'alpha-clean-food',
@@ -138,29 +139,28 @@ export const projects: Project[] = [
     additionalDetails: 'Our AMC services included regular inspections, preventive maintenance, and immediate technical support to ensure the palletizing system operates at peak efficiency with minimal interruptions to production.'
   },
   {
-    id: 'azania-distillers',
-    title: 'Azania Distillers - Liquor Line Installation',
-    location: 'Moshi, Tanzania',
-    year: '2024',
-    capacity: 'Full Production Line',
-    description: 'Complete installation and commissioning of a state-of-the-art liquor production line, including equipment setup, process optimization, and operator training.',
+    id: 'botachem-limited',
+    title: 'Botachem Limited - Linear Filler Equipment',
+    location: 'Nairobi, Kenya',
+    year: '2023',
+    capacity: '6 SKU Capacity',
+    description: 'Installation and commissioning of linear filler equipment for agrochemical products, designed to handle multiple SKUs with precision and efficiency.',
     highlights: [
-      'Liquor Production Line Installation',
-      'Full Commissioning',
-      'Process Optimization',
-      'Quality Control Integration',
-      'Operator Training'
+      'Linear Filler Equipment',
+      'Agrochemical Application',
+      '6 SKU Configuration',
+      'Precision Filling Technology',
+      'End-to-End Commissioning'
     ],
     images: [
-      '/project-images/Azania Distillers 1.jpeg',
-      '/project-images/Azania Distillers  2.jpeg',
-      '/project-images/Azania Distillers  3.jpeg',
-      '/project-images/Azania Distillers 4.jpeg',
-      '/project-images/Azania Distillers 5.jpeg',
-      '/project-images/Azania Distillers 6.jpeg',
-      '/project-images/Azania Distillers 7.jpeg'
+      '/project-images/Botachem Limited 3.jpeg',
+      '/project-images/Botachem Limited 1.jpeg',
+      '/project-images/Botachem Limited 2.jpeg',
+      '/project-images/Botachem Limited 4.jpeg',
+      '/project-images/Botachem Limited 5.jpeg',
+      '/project-images/Botachem Limited.jpg'
     ],
-    additionalDetails: 'The project involved the installation of a complete liquor production line, including fermentation, distillation, and bottling equipment, with a focus on efficiency, quality control, and compliance with industry standards.'
+    additionalDetails: 'The system was specifically configured to handle the unique requirements of agrochemical products, ensuring accurate filling and sealing while maintaining product integrity.'
   },
   {
     id: 'eabl-nairobi',
