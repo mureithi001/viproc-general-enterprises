@@ -5,8 +5,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { useEffect } from 'react';
 
 const Services = () => {
+  useEffect(() => {
+    document.title = 'Services - Viproc General Enterprises | Packaging Machinery Kenya';
+    document.querySelector('meta[name="description"]')?.setAttribute('content', 
+      'Viproc General Enterprises offers comprehensive packaging machinery services including equipment supply, installation commissioning, spare parts, and consulting across Kenya and East Africa.'
+    );
+  }, []);
   const getServiceIcon = (category: string) => {
     switch (category) {
       case 'Equipment Solutions':

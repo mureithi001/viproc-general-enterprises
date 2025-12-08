@@ -1,6 +1,13 @@
 import { Eye, Goal, Leaf, Utensils, Pill, FlaskConical, Sprout, Printer, Factory, GlassWater, Container } from 'lucide-react';
+import { useEffect } from 'react';
 
 const About = () => {
+  useEffect(() => {
+    document.title = 'About Viproc General Enterprises - Leading Packaging Machinery Supplier | Kenya';
+    document.querySelector('meta[name="description"]')?.setAttribute('content', 
+      'Learn about Viproc General Enterprises - your trusted partner for packaging machinery, end-of-line solutions, and industrial equipment in Kenya and East Africa for over 7 years.'
+    );
+  }, []);
   const clients = [
     // First 6 priority clients
     { name: 'Unilever', logo: '/site-images/Unilever.jpg' },

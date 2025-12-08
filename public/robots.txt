@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://viproc-general-enterprises.vercel.app/sitemap.xml
+
+# Allow search engines to crawl all important content
+Allow: /src/
+Allow: /public/
+Allow: /site-images/
+Allow: /project-images/
+Allow: /services-videos/
+Allow: /hero/
+
+# Block non-essential directories
+Disallow: /node_modules/
+Disallow: /.bolt/
+Disallow: /.git/
+Disallow: /dist/

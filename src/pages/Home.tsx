@@ -3,8 +3,15 @@ import { ArrowRight, Award, Users, Zap, PackageCheck, Globe, Wrench } from 'luci
 import { Link } from 'react-router-dom';
 import { services, type Service } from '../data/services';
 import { projects } from '../data/projects';
+import { useEffect } from 'react';
 
 const Home = () => {
+  useEffect(() => {
+    document.title = 'Viproc General Enterprises - Packaging Machinery Supplier Kenya | East Africa';
+    document.querySelector('meta[name="description"]')?.setAttribute('content', 
+      'Viproc General Enterprises - Leading supplier of packaging machinery, end-of-line equipment, spare parts, installation & commissioning services in Kenya and East Africa. Industrial packaging solutions for food, beverage, pharmaceutical, and manufacturing industries.'
+    );
+  }, []);
   const stats = [
     { icon: Zap, number: '50+', label: 'Projects Delivered', description: 'Successfully completed projects worldwide' },
     { icon: Award, number: '98%', label: 'Client Satisfaction', description: 'Committed to exceeding client expectations' },
@@ -27,8 +34,9 @@ const Home = () => {
       <Hero />
 
       {/* Stats Section */}
-      <section className="py-20 bg-light relative overflow-hidden">
+      <section className="py-20 bg-light relative overflow-hidden" aria-labelledby="stats-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 id="stats-heading" className="sr-only">Viproc General Enterprises Achievements and Statistics</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {stats.map((stat, index) => (
               <div
@@ -48,10 +56,10 @@ const Home = () => {
       </section>
 
       {/* About Preview */}
-      <section className="py-16 sm:py-20 bg-light">
+      <section className="py-16 sm:py-20 bg-light" aria-labelledby="about-preview-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
-            <h2 className="text-4xl lg:text-5xl font-serif font-bold text-dark mb-4 lg:mb-6">About Viproc General Enterprises</h2>
+            <h2 id="about-preview-heading" className="text-4xl lg:text-5xl font-serif font-bold text-dark mb-4 lg:mb-6">About Viproc General Enterprises</h2>
             <p className="text-base lg:text-lg text-gray-600 leading-relaxed mb-6">
               We provide world-class end-to-end packaging and processing solutions, empowering your business with efficiency, reliability, and innovation.
             </p>
@@ -73,11 +81,11 @@ const Home = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-16 sm:py-20 bg-white" aria-labelledby="services-preview-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-end justify-between mb-8">
             <div>
-              <h2 className="text-4xl font-serif font-bold text-dark">Our Services</h2>
+              <h2 id="services-preview-heading" className="text-4xl font-serif font-bold text-dark">Our Services</h2>
               <p className="text-gray-600 mt-2">From concept to commissioning—comprehensive packaging and processing solutions.</p>
             </div>
             <Link to="/services" className="hidden sm:inline-flex items-center space-x-2 text-dark hover:text-dark/80 font-semibold">
@@ -112,11 +120,11 @@ const Home = () => {
       </section>
 
       {/* Projects Preview */}
-      <section className="py-16 sm:py-20 bg-light">
+      <section className="py-16 sm:py-20 bg-light" aria-labelledby="projects-preview-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-end justify-between mb-12">
             <div>
-              <h2 className="text-4xl font-serif font-bold text-dark">Featured Projects</h2>
+              <h2 id="projects-preview-heading" className="text-4xl font-serif font-bold text-dark">Featured Projects</h2>
               <p className="text-gray-600 mt-2">Explore our successful installations and innovative solutions across industries.</p>
             </div>
             <Link to="/projects" className="hidden sm:inline-flex items-center space-x-2 text-dark hover:text-dark/80 font-semibold">
@@ -171,11 +179,11 @@ const Home = () => {
       </section>
 
       {/* Packaging Machinery Supply (Main Offering) - moved below Services */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-16 sm:py-20 bg-white" aria-labelledby="packaging-machinery-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
-              <h2 className="text-4xl lg:text-5xl font-serif font-bold text-dark mb-4 lg:mb-6">Packaging Machinery Supply</h2>
+              <h2 id="packaging-machinery-heading" className="text-4xl lg:text-5xl font-serif font-bold text-dark mb-4 lg:mb-6">Packaging Machinery Supply</h2>
               <p className="text-base lg:text-lg text-gray-600 leading-relaxed mb-6">
                 We supply a wide variety of primary and secondary packaging machinery from leading global manufacturers —
                 backed by local engineering, installation & commissioning, and OEM spare parts.
@@ -229,11 +237,11 @@ const Home = () => {
       </section>
 
       {/* Featured Solutions Preview */}
-      <section className="py-20 bg-light">
+      <section className="py-20 bg-light" aria-labelledby="solutions-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-5xl font-serif font-bold text-dark mb-6 leading-tight">
+              <h2 id="solutions-heading" className="text-5xl font-serif font-bold text-dark mb-6 leading-tight">
                 Innovative Solutions for Modern Production
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -261,10 +269,10 @@ const Home = () => {
       </section>
 
       {/* Our Clients Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white" aria-labelledby="clients-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-bold text-dark mb-4">Our Clients</h2>
+            <h2 id="clients-heading" className="text-4xl font-serif font-bold text-dark mb-4">Our Clients</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               We are proud to have worked with a diverse range of industry leaders.
             </p>
@@ -293,10 +301,10 @@ const Home = () => {
       </section>
 
       {/* What Sets Us Apart */}
-      <section className="py-20 bg-light">
+      <section className="py-20 bg-light" aria-labelledby="advantages-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-bold text-dark mb-4">What Sets Us Apart</h2>
+            <h2 id="advantages-heading" className="text-4xl font-serif font-bold text-dark mb-4">What Sets Us Apart</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Delivering comprehensive solutions and unwavering support to drive your success.
             </p>
@@ -337,12 +345,12 @@ const Home = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-dark text-white relative overflow-hidden">
+      <section className="py-20 bg-dark text-white relative overflow-hidden" aria-labelledby="cta-heading">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent"></div>
         </div>
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative">
-          <h2 className="text-4xl lg:text-5xl font-serif font-bold mb-6">
+          <h2 id="cta-heading" className="text-4xl lg:text-5xl font-serif font-bold mb-6">
             Ready to Optimize Your Production Line?
           </h2>
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
