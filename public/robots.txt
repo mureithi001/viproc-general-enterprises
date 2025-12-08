@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://viproc-general-enterprises.vercel.app/sitemap.xml
+Sitemap: https://www.viprocgeneralenterprises.co.ke/sitemap.xml
 
 # Allow search engines to crawl all important content
 Allow: /src/
